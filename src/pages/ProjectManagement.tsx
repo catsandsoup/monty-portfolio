@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Building2, PresentationScreen, Network, ChevronDown } from "lucide-react";
+import { Building2, Presentation, Network, ChevronDown } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -21,7 +21,7 @@ const ProjectManagement = () => {
       description: "Managed the development and launch of an innovative VR platform for real estate visualization, reducing client decision time by 40%.",
       duration: "2020 - 2021",
       role: "Technical Project Manager",
-      icon: <PresentationScreen className="h-6 w-6 text-gray-600" />,
+      icon: <Presentation className="h-6 w-6 text-gray-600" />,
     },
     {
       title: "Enterprise Solutions",
