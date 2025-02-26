@@ -1,6 +1,4 @@
-
 import { motion } from "framer-motion";
-import BackButton from "@/components/BackButton";
 import ProductShowcase from "@/components/product-development/ProductShowcase";
 import SkillsMatrix from "@/components/product-development/SkillsMatrix";
 import Footer from "@/components/Footer";
@@ -8,10 +6,6 @@ import Footer from "@/components/Footer";
 const ProductDevelopment = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="absolute left-6 top-6 z-50">
-        <BackButton />
-      </div>
-      
       {/* Hero Section */}
       <div className="relative h-[65vh] flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#00a5ee]/5 to-transparent">
         <div className="absolute inset-0 bg-grid-white/[0.02]" />

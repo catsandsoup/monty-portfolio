@@ -24,7 +24,11 @@ const AppContent = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      {showBackButton && <BackButton />}
+      {showBackButton && (
+        <div className="fixed left-6 top-6 z-50">
+          <BackButton />
+        </div>
+      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/experience" element={<Experience />} />
