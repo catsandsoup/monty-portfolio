@@ -50,10 +50,7 @@ const Header = () => {
             <Link to="/experience" className="text-gray-600 hover:text-gray-900 transition-colors">
               Experience & Projects
             </Link>
-            <Link to="/skills" className="text-gray-600 hover:text-gray-900 transition-colors">
-              Skills & Expertise
-            </Link>
-            <Link to="/resume" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link to="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
               Resume
             </Link>
             <Link to="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
@@ -72,7 +69,7 @@ const Header = () => {
         </nav>
       </header>
 
-      {/* Mobile Navigation Overlay - Apple-style */}
+      {/* Mobile Navigation Overlay */}
       {isMenuOpen && (
         <div 
           className="fixed inset-0 z-40 bg-white/95 backdrop-blur-lg"
@@ -95,14 +92,7 @@ const Header = () => {
                 Experience & Projects
               </Link>
               <Link 
-                to="/skills" 
-                className="text-[2rem] font-medium text-gray-900 hover:text-accent transition-colors tracking-tight"
-                onClick={closeMenu}
-              >
-                Skills & Expertise
-              </Link>
-              <Link 
-                to="/resume" 
+                to="/about" 
                 className="text-[2rem] font-medium text-gray-900 hover:text-accent transition-colors tracking-tight"
                 onClick={closeMenu}
               >

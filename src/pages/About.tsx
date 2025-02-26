@@ -1,6 +1,18 @@
+
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import Footer from "@/components/Footer";
+
+const SkillSection = ({ title, skills }: { title: string; skills: string[] }) => (
+  <div className="mb-8">
+    <h3 className="text-xl font-semibold text-gray-900 mb-4">{title}</h3>
+    <ul className="space-y-2">
+      {skills.map((skill, index) => (
+        <li key={index} className="text-gray-600">• {skill}</li>
+      ))}
+    </ul>
+  </div>
+);
 
 const About = () => {
   return (
@@ -16,29 +28,122 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-5xl font-bold mb-8 text-gray-900"
         >
-          About Me
+          Professional Resume
         </motion.h1>
         
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="space-y-8"
-        >
+        <div className="space-y-8">
+          {/* Professional Summary */}
           <Card className="p-8 backdrop-blur-xl bg-white/80 shadow-lg border-0">
-            <div className="prose max-w-none">
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <h2 className="text-2xl font-semibold mb-6 text-gray-900">Professional Summary</h2>
+            <div className="prose max-w-none text-gray-600">
+              <p className="text-lg leading-relaxed mb-6">
+                As a Product Development leader with over a decade of experience, I specialize in 
+                translating complex business requirements into elegant technical solutions. My approach 
+                combines deep technical expertise with strategic business acumen, ensuring that every 
+                product not only meets immediate needs but scales for future growth.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+              <p className="text-lg leading-relaxed">
+                From concept to deployment, I pride myself on delivering innovative solutions that drive 
+                meaningful impact, while maintaining a strong focus on user experience and technical excellence.
               </p>
             </div>
           </Card>
-        </motion.div>
+
+          {/* Skills Matrix */}
+          <Card className="p-8 backdrop-blur-xl bg-white/80 shadow-lg border-0">
+            <h2 className="text-2xl font-semibold mb-8 text-gray-900">Key Marketable Skills</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+              <SkillSection 
+                title="Technical Project Management"
+                skills={[
+                  "Visualization project lifecycle management",
+                  "Resource coordination and allocation",
+                  "Quality control implementation",
+                  "Timeline management and prioritization",
+                  "Workflow optimization"
+                ]}
+              />
+
+              <SkillSection 
+                title="Technical Leadership"
+                skills={[
+                  "Technology evaluation and selection",
+                  "Software implementation and customization",
+                  "IT infrastructure planning and development",
+                  "Cross-platform integration",
+                  "Technical problem-solving"
+                ]}
+              />
+
+              <SkillSection 
+                title="Business Strategy"
+                skills={[
+                  "Competitive market analysis",
+                  "Service development and positioning",
+                  "Product innovation",
+                  "Strategic planning",
+                  "Brand management"
+                ]}
+              />
+
+              <SkillSection 
+                title="Digital Technology"
+                skills={[
+                  "Architectural visualization software (SketchUp, Lumion, Twinmotion)",
+                  "Web development (WordPress, HTML/CSS/JavaScript)",
+                  "3D modeling and rendering",
+                  "Virtual tour technology",
+                  "Web hosting and file management"
+                ]}
+              />
+
+              <SkillSection 
+                title="Entrepreneurial Capabilities"
+                skills={[
+                  "New service conceptualization",
+                  "Business opportunity identification",
+                  "Strategic pricing",
+                  "White-label solution development",
+                  "Business development"
+                ]}
+              />
+
+              <SkillSection 
+                title="Operations Management"
+                skills={[
+                  "Process standardization",
+                  "Technology procurement",
+                  "Database management",
+                  "File system optimization",
+                  "Resource efficiency"
+                ]}
+              />
+
+              <SkillSection 
+                title="Soft Skills"
+                skills={[
+                  "Self-directed learning",
+                  "Time management",
+                  "Multi-disciplinary adaptability",
+                  "Change management",
+                  "Client relationship management"
+                ]}
+              />
+
+              <SkillSection 
+                title="Communication Skills"
+                skills={[
+                  "Marketing content creation",
+                  "Technical documentation",
+                  "Client presentations",
+                  "Brand representation",
+                  "Networking"
+                ]}
+              />
+            </div>
+          </Card>
+        </div>
       </motion.div>
       <Footer />
     </section>
