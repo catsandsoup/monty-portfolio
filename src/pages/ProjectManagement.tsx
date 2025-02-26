@@ -25,7 +25,7 @@ const ProjectManagement = () => {
   ];
 
   return (
-    <section className="min-h-screen pt-20 px-6">
+    <section className="min-h-screen pt-24 px-6">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -33,10 +33,10 @@ const ProjectManagement = () => {
         className="container mx-auto"
       >
         <div className="flex items-center gap-4 mb-8">
-          <Building2 className="h-10 w-10 text-accent" />
-          <h1 className="text-4xl md:text-5xl font-bold">Project Management</h1>
+          <Building2 className="h-10 w-10 text-blue-600" />
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">Project Management</h1>
         </div>
-        <p className="text-gray-600 max-w-2xl mb-12">
+        <p className="text-gray-700 text-lg max-w-2xl mb-12">
           Leading teams and delivering successful outcomes through strategic planning,
           effective communication, and innovative problem-solving approaches.
         </p>
@@ -47,13 +47,13 @@ const ProjectManagement = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all border border-gray-100"
             >
-              <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
-              <div className="text-sm text-accent mb-2">
+              <h2 className="text-2xl font-semibold mb-2 text-gray-900">{project.title}</h2>
+              <div className="text-sm font-medium text-blue-600 mb-3">
                 {project.role} | {project.duration}
               </div>
-              <p className="text-gray-600">{project.description}</p>
+              <p className="text-gray-700 text-base leading-relaxed">{project.description}</p>
             </motion.div>
           ))}
         </div>

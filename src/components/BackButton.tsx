@@ -10,11 +10,11 @@ const BackButton = () => {
     <Button
       variant="ghost"
       size="sm"
-      className="absolute left-6 top-20 flex items-center gap-1 text-gray-600 hover:text-gray-900 transition-colors"
+      className="fixed left-6 top-24 z-40 flex items-center gap-1.5 text-gray-900 hover:text-blue-600 hover:bg-blue-50 transition-all"
       onClick={() => navigate(-1)}
     >
-      <ChevronLeft className="h-4 w-4" />
-      Back
+      <ChevronLeft className="h-5 w-5" />
+      <span className="font-medium">Back</span>
     </Button>
   );
 };
