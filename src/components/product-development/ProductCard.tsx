@@ -7,13 +7,17 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const IconComponent = product.Icon;
+  
   return (
     <div 
       className={`${product.bgColor} border ${product.borderColor} rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 backdrop-blur-xl`}
     >
       <div className="p-6">
         <div className="flex items-center mb-4">
-          <span className="mr-2">{product.icon}</span>
+          <span className="mr-2">
+            <IconComponent className={product.accentColor} />
+          </span>
           <h3 className="text-xl font-semibold text-gray-900">{product.name}</h3>
         </div>
         <p className={`${product.accentColor} font-medium mb-3`}>{product.tagline}</p>

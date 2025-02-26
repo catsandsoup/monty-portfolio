@@ -1,5 +1,6 @@
 
 import { Activity, Code2, Heart } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 
 export type Product = {
   id: string;
@@ -9,7 +10,7 @@ export type Product = {
   accentColor: string;
   bgColor: string;
   borderColor: string;
-  icon: JSX.Element;
+  Icon: LucideIcon;
   features: string[];
 };
 
@@ -22,7 +23,7 @@ export const products: Product[] = [
     accentColor: 'text-[#00a5ee]',
     bgColor: 'bg-[#00a5ee]/5',
     borderColor: 'border-[#00a5ee]/20',
-    icon: <Activity className="text-[#00a5ee]" />,
+    Icon: Activity,
     features: [
       'File Upload: Import blood test results from Excel or CSV files',
       'Data Privacy: All processing happens locally in your browser',
@@ -37,7 +38,7 @@ export const products: Product[] = [
     accentColor: 'text-purple-600',
     bgColor: 'bg-purple-50',
     borderColor: 'border-purple-200',
-    icon: <Code2 className="text-purple-600" />,
+    Icon: Code2,
     features: [
       'Interactive Learning Journeys: Progress through carefully designed learning paths',
       'Diverse Challenge Types: Argument analysis, word selection exercises, and more',
@@ -52,7 +53,7 @@ export const products: Product[] = [
     accentColor: 'text-rose-500',
     bgColor: 'bg-rose-50',
     borderColor: 'border-rose-200',
-    icon: <Heart className="text-rose-500" />,
+    Icon: Heart,
     features: [
       'Digital Love Journal: Create and save personalized love notes with photos',
       'Personalized Experience: Customizable partner profile with photo',
