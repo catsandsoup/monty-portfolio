@@ -32,21 +32,21 @@ const cards = [
 
 const FeaturedWork = () => {
   return (
-    <section className="py-64 relative overflow-hidden">
+    <section className="py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white" />
       
-      <div className="container mx-auto px-24 relative z-10">
+      <div className="container mx-auto px-6 relative z-10">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-center mb-48 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600"
+          className="text-4xl md:text-5xl font-bold text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600"
         >
           My Expertise
         </motion.h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-32">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {cards.map((card) => (
             <motion.div
               key={card.title}
@@ -60,17 +60,17 @@ const FeaturedWork = () => {
                 to={card.link}
                 className="block h-full"
               >
-                <div className={`relative h-full p-24 rounded-2xl bg-gradient-to-br ${card.gradient} backdrop-blur-xl border border-[#00a5ee]/10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1`}>
-                  <card.icon className="w-14 h-14 text-[#00a5ee] mb-16 transform group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="text-2xl font-semibold mb-16 text-gray-900">
+                <div className={`relative h-full p-10 rounded-2xl bg-gradient-to-br ${card.gradient} backdrop-blur-xl border border-[#00a5ee]/10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1`}>
+                  <card.icon className="w-14 h-14 text-[#00a5ee] mb-8 transform group-hover:scale-110 transition-transform duration-300" />
+                  <h3 className="text-2xl font-semibold mb-6 text-gray-900">
                     {card.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-24 text-lg">
+                  <p className="text-gray-600 leading-relaxed mb-8 text-lg">
                     {card.description}
                   </p>
                   <div className="flex items-center text-[#00a5ee] font-medium text-lg">
                     Learn More
-                    <ArrowUpRight className="w-6 h-6 ml-8 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    <ArrowUpRight className="w-6 h-6 ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </div>
                 </div>
               </Link>
