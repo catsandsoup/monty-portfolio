@@ -12,6 +12,7 @@ const Header = () => {
       setIsMobile(window.innerWidth < 768);
       if (window.innerWidth >= 768) {
         setIsMenuOpen(false);
+        document.body.style.overflow = 'unset';
       }
     };
 
@@ -21,7 +22,6 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    // Prevent scrolling when mobile menu is open
     document.body.style.overflow = !isMenuOpen ? 'hidden' : 'unset';
   };
 
@@ -31,78 +31,85 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
-      <nav className="container mx-auto px-6 h-16 flex items-center justify-between">
-        <Link 
-          to="/" 
-          className="text-xl font-medium text-gray-900 hover:text-accent transition-colors"
-          onClick={closeMenu}
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <nav className="container mx-auto px-6 h-16 flex items-center justify-between">
+          <Link 
+            to="/" 
+            className="text-xl font-medium text-gray-900 hover:text-accent transition-colors"
+            onClick={closeMenu}
+          >
+            Monty Giovenco
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-8">
+            <Link to="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+              Home
+            </Link>
+            <Link to="/portfolio" className="text-gray-600 hover:text-gray-900 transition-colors">
+              Portfolio
+            </Link>
+            <Link to="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
+              About
+            </Link>
+            <Link to="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
+              Contact
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 -mr-2 text-gray-600 hover:text-gray-900 transition-colors"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </nav>
+      </header>
+
+      {/* Mobile Navigation Overlay */}
+      {isMenuOpen && (
+        <div 
+          className="fixed inset-0 z-40 bg-white/98 backdrop-blur-md"
+          style={{ top: '64px' }} // Height of the header
         >
-          Monty Giovenco
-        </Link>
-
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8">
-          <Link to="/" className="text-gray-600 hover:text-gray-900 transition-colors">
-            Home
-          </Link>
-          <Link to="/portfolio" className="text-gray-600 hover:text-gray-900 transition-colors">
-            Portfolio
-          </Link>
-          <Link to="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
-            About
-          </Link>
-          <Link to="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
-            Contact
-          </Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2 -mr-2 text-gray-600 hover:text-gray-900 transition-colors"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="fixed inset-0 top-16 bg-white/95 backdrop-blur-md z-40 animate-fade-down">
-            <div className="flex flex-col items-center justify-start pt-8 space-y-8 text-lg">
+          <nav className="h-full flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center space-y-8 text-xl">
               <Link 
                 to="/" 
-                className="w-full text-center py-3 text-gray-600 hover:text-gray-900 transition-colors"
+                className="py-2 px-4 text-gray-900 hover:text-accent transition-colors font-medium"
                 onClick={closeMenu}
               >
                 Home
               </Link>
               <Link 
                 to="/portfolio" 
-                className="w-full text-center py-3 text-gray-600 hover:text-gray-900 transition-colors"
+                className="py-2 px-4 text-gray-900 hover:text-accent transition-colors font-medium"
                 onClick={closeMenu}
               >
                 Portfolio
               </Link>
               <Link 
                 to="/about" 
-                className="w-full text-center py-3 text-gray-600 hover:text-gray-900 transition-colors"
+                className="py-2 px-4 text-gray-900 hover:text-accent transition-colors font-medium"
                 onClick={closeMenu}
               >
                 About
               </Link>
               <Link 
                 to="/contact" 
-                className="w-full text-center py-3 text-gray-600 hover:text-gray-900 transition-colors"
+                className="py-2 px-4 text-gray-900 hover:text-accent transition-colors font-medium"
                 onClick={closeMenu}
               >
                 Contact
               </Link>
             </div>
-          </div>
-        )}
-      </nav>
-    </header>
+          </nav>
+        </div>
+      )}
+    </>
   );
 };
 
