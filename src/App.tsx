@@ -7,7 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "./components/Header";
 import BackButton from "./components/BackButton";
 import Home from "./pages/Index";
-import Experience from "./pages/Portfolio";
+import Experience from "./pages/Experience";
 import ProjectManagement from "./pages/ProjectManagement";
 import ProductDevelopment from "./pages/ProductDevelopment";
 import Entrepreneurship from "./pages/Entrepreneurship";
