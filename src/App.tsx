@@ -1,11 +1,12 @@
 
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Home, User, Briefcase, MessageSquare } from "lucide-react";
+import { NavBar } from "./components/ui/tubelight-navbar";
 import ScrollToTop from "./components/ScrollToTop";
-import Header from "./components/Header";
 import Home from "./pages/Index";
 import Experience from "./pages/Experience";
 import ProjectManagement from "./pages/ProjectManagement";
@@ -19,10 +20,17 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const AppContent = () => {
+  const navItems = [
+    { name: "Home", url: "/", icon: Home },
+    { name: "Experience & Projects", url: "/experience", icon: Briefcase },
+    { name: "About", url: "/about", icon: User },
+    { name: "Contact", url: "/contact", icon: MessageSquare }
+  ];
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pt-24">
       <ScrollToTop />
-      <Header />
+      <NavBar items={navItems} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/experience" element={<Experience />} />
