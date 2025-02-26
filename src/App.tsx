@@ -5,7 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "./components/Header";
-import BackButton from "./components/BackButton";
 import Home from "./pages/Index";
 import Experience from "./pages/Experience";
 import ProjectManagement from "./pages/ProjectManagement";
@@ -19,17 +18,9 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const AppContent = () => {
-  const location = useLocation();
-  const showBackButton = location.pathname !== "/";
-
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      {showBackButton && (
-        <div className="fixed left-6 top-6 z-50">
-          <BackButton />
-        </div>
-      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/experience" element={<Experience />} />
