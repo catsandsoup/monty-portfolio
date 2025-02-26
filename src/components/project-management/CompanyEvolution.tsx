@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 
 interface EvolutionStageProps {
@@ -24,16 +25,17 @@ const CompanyEvolution = () => {
   return (
     <>
       <section className="py-12 px-6 bg-gradient-to-b from-gray-50/90 to-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-xl">
+        <div className="container mx-auto max-w-7xl">
+          <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
             <iframe
               src="https://www.youtube.com/embed/d-hsgpV4dLQ"
-              title="Project Management Overview"
+              title="HomeVR Brand Launch Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              className="w-full h-full"
+              className="absolute top-0 left-0 w-full h-full"
             />
           </div>
+          <p className="text-center mt-4 text-gray-600/90">HomeVR Brand Launch Video</p>
         </div>
       </section>
       
@@ -49,7 +51,7 @@ const CompanyEvolution = () => {
             Company Evolution
           </h2>
           <p className="text-xl text-gray-600/90 max-w-3xl mx-auto">
-            Instrumental in transforming a traditional architectural visualization business 
+            Instrumental in transforming a traditional architectural visualisation business 
             into a technology-driven real estate solutions provider.
           </p>
         </motion.div>
@@ -59,11 +61,11 @@ const CompanyEvolution = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <EvolutionStage
               title="House of Manuela"
-              description="Traditional architectural visualization studio focused on static renderings and basic 3D modeling"
+              description="Traditional architectural visualisation studio focused on static renderings and basic 3D modelling"
             />
             <EvolutionStage
               title="HomeVR"
-              description="Innovative digital platform providing immersive VR experiences and comprehensive real estate visualization solutions"
+              description="Innovative digital platform providing immersive VR experiences and comprehensive real estate visualisation solutions"
               isRight
               delay={0.3}
             />

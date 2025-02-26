@@ -37,13 +37,13 @@ const KeyMetrics = () => {
       icon: <Building2 className="h-8 w-8 text-[#00a5ee]" />,
       title: "Digital Transformation",
       value: "200%",
-      description: "Growth in online sales through strategic digital initiatives and platform optimization"
+      description: "Improvement in client satisfaction after implementing virtual tour software"
     },
     {
       icon: <LineChart className="h-8 w-8 text-[#00a5ee]" />,
       title: "Client Experience",
-      value: "40%",
-      description: "Reduction in client decision time through implementation of VR visualization platform"
+      value: "50%",
+      description: "Reduction in client decision time through implementation of VR visualisation platform"
     }
   ];
 
