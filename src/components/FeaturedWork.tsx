@@ -41,7 +41,7 @@ const FeaturedWork = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600"
+          className="text-4xl md:text-5xl font-bold text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600"
         >
           My Expertise
         </motion.h2>
@@ -60,17 +60,17 @@ const FeaturedWork = () => {
                 to={card.link}
                 className="block h-full"
               >
-                <div className={`relative h-full p-8 rounded-2xl bg-gradient-to-br ${card.gradient} backdrop-blur-xl border border-[#00a5ee]/10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1`}>
-                  <card.icon className="w-12 h-12 text-[#00a5ee] mb-6 transform group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="text-2xl font-semibold mb-4 text-gray-900">
+                <div className={`relative h-full p-10 rounded-2xl bg-gradient-to-br ${card.gradient} backdrop-blur-xl border border-[#00a5ee]/10 transition-all duration-500 hover:shadow-xl hover:-translate-y-1`}>
+                  <card.icon className="w-14 h-14 text-[#00a5ee] mb-8 transform group-hover:scale-110 transition-transform duration-300" />
+                  <h3 className="text-2xl font-semibold mb-6 text-gray-900">
                     {card.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
+                  <p className="text-gray-600 leading-relaxed mb-8 text-lg">
                     {card.description}
                   </p>
-                  <div className="flex items-center text-[#00a5ee] font-medium">
+                  <div className="flex items-center text-[#00a5ee] font-medium text-lg">
                     Learn More
-                    <ArrowUpRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    <ArrowUpRight className="w-6 h-6 ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </div>
                 </div>
               </Link>

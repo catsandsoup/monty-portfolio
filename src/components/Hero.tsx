@@ -16,14 +16,14 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="max-w-4xl mx-auto text-center pt-32 md:pt-20"
+          className="max-w-4xl mx-auto text-center pt-24 md:pt-16"
         >
           {/* Profile Image */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-12"
+            className="mb-16"
           >
             <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-[#00a5ee]/20 shadow-[0_0_60px_-15px_rgba(0,165,238,0.3)] transition-all duration-300 hover:scale-105">
               <img
@@ -38,7 +38,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-gray-600"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-gray-600"
           >
             Hi, I'm Monty Giovenco
           </motion.h1>
@@ -47,7 +47,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="relative mb-16"
+            className="relative mb-20"
           >
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-light tracking-wide leading-relaxed">
               Product & Business Strategist crafting digital experiences that drive impact.<br className="hidden sm:block"/>
@@ -59,7 +59,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row justify-center items-center gap-6"
+            className="flex flex-col sm:flex-row justify-center items-center gap-8"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -67,7 +67,7 @@ const Hero = () => {
             >
               <Link
                 to="/experience"
-                className="group flex items-center gap-2 px-8 py-4 text-lg font-medium text-white bg-[#00a5ee] rounded-full hover:bg-[#0094d6] transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="group flex items-center gap-2 px-8 py-4 min-h-[56px] min-w-[200px] text-lg font-medium text-white bg-[#00a5ee] rounded-2xl hover:bg-[#0094d6] transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 View My Work
                 <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -79,7 +79,7 @@ const Hero = () => {
             >
               <Link
                 to="/contact"
-                className="group px-8 py-4 text-lg font-medium text-[#00a5ee] border-2 border-[#00a5ee] rounded-full hover:bg-[#00a5ee]/5 transition-all duration-300 flex items-center gap-2"
+                className="group flex items-center gap-2 px-8 py-4 min-h-[56px] min-w-[200px] text-lg font-medium text-[#00a5ee] border-2 border-[#00a5ee] rounded-2xl hover:bg-[#00a5ee]/5 transition-all duration-300"
               >
                 Get in Touch
                 <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
