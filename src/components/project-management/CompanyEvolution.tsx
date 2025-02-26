@@ -16,14 +16,14 @@ const EvolutionStage = ({ title, description, isRight = false, delay = 0 }: Evol
     transition={{ duration: 0.6, delay }}
     className={`${isRight ? 'md:pl-12' : 'text-right md:pr-12'}`}
   >
-    <h3 className="text-2xl font-semibold mb-4 text-gray-900">{title}</h3>
-    <p className="text-gray-600">{description}</p>
+    <h3 className="text-2xl font-medium mb-4 text-gray-900/90">{title}</h3>
+    <p className="text-gray-600/90">{description}</p>
   </motion.div>
 );
 
 const CompanyEvolution = () => {
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-24 px-6 bg-gradient-to-b from-white to-gray-50/90">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0 }}
@@ -32,17 +32,17 @@ const CompanyEvolution = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-semibold mb-6 text-gray-900">
+          <h2 className="text-3xl font-medium mb-6 text-gray-900/90">
             Company Evolution
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600/90 max-w-3xl mx-auto">
             Instrumental in transforming a traditional architectural visualization business 
             into a technology-driven real estate solutions provider.
           </p>
         </motion.div>
 
         <div className="relative">
-          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#00a5ee]/20 to-transparent" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <EvolutionStage
               title="House of Manuela"

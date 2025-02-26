@@ -20,8 +20,8 @@ const ExperienceSection = ({ title, items }: ExperienceSectionProps) => (
     viewport={{ once: true }}
     transition={{ duration: 0.6 }}
   >
-    <h2 className="text-3xl font-semibold mb-8 text-gray-900">{title}</h2>
-    <div className="space-y-4 text-gray-600">
+    <h2 className="text-3xl font-medium mb-8 text-gray-900/90">{title}</h2>
+    <div className="space-y-4 text-gray-600/90">
       {items.map((item, index) => (
         <p key={index}>• {item}</p>
       ))}
@@ -72,7 +72,7 @@ const ExperienceSections = () => {
   };
 
   return (
-    <section className="py-24 px-6 bg-white/70 backdrop-blur-md">
+    <section className="py-24 px-6 bg-white/90 backdrop-blur-xl">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24">
           <div className="space-y-16">

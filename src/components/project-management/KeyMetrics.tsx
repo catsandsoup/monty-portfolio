@@ -18,15 +18,15 @@ const MetricCard = ({ icon, title, value, description, delay = 0 }: MetricCardPr
     viewport={{ once: true }}
     transition={{ duration: 0.6, delay }}
   >
-    <Card className="relative overflow-hidden backdrop-blur-md bg-white/80 border-0 shadow-lg p-8">
-      <div className="mb-4">
+    <Card className="relative overflow-hidden backdrop-blur-xl bg-white/90 border-0 shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+      <div className="mb-4 opacity-10">
         {icon}
       </div>
-      <h3 className="text-2xl font-semibold mb-3 text-gray-900">
+      <h3 className="text-2xl font-medium mb-3 text-gray-900/90">
         {title}
       </h3>
-      <p className="text-4xl font-bold text-accent mb-4">{value}</p>
-      <p className="text-gray-600">{description}</p>
+      <p className="text-4xl font-bold text-[#00a5ee] mb-4">{value}</p>
+      <p className="text-gray-600/90">{description}</p>
     </Card>
   </motion.div>
 );
@@ -34,13 +34,13 @@ const MetricCard = ({ icon, title, value, description, delay = 0 }: MetricCardPr
 const KeyMetrics = () => {
   const metrics = [
     {
-      icon: <Building2 className="h-8 w-8 text-accent" />,
+      icon: <Building2 className="h-8 w-8 text-[#00a5ee]" />,
       title: "Digital Transformation",
       value: "200%",
       description: "Growth in online sales through strategic digital initiatives and platform optimization"
     },
     {
-      icon: <LineChart className="h-8 w-8 text-accent" />,
+      icon: <LineChart className="h-8 w-8 text-[#00a5ee]" />,
       title: "Client Experience",
       value: "40%",
       description: "Reduction in client decision time through implementation of VR visualization platform"
