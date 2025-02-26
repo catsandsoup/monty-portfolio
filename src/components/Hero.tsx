@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/10 dark:to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white dark:to-black" />
       
       <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div
@@ -15,8 +14,24 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
+          {/* Profile Image */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="mb-8"
+          >
+            <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-[#00a5ee] shadow-xl">
+              <img
+                src="/placeholder.svg"
+                alt="Monty Giovenco"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+
           <motion.h1 
-            className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300"
+            className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 bg-clip-text text-gray-900 dark:text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
