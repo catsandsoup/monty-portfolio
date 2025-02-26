@@ -45,7 +45,7 @@ const About = () => {
 
           {/* Skills Matrix */}
           <Card className="p-8 backdrop-blur-xl bg-white/80 shadow-lg border-0">
-            <h2 className="text-2xl font-semibold mb-8 text-gray-900">Key Marketable Skills</h2>
+            <h2 className="text-2xl font-semibold mb-8 text-gray-900 text-center">Skills &amp; Abilities</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
               <SkillSection title="Technical Project Management" skills={["Visualization project lifecycle management", "Resource coordination and allocation", "Quality control implementation", "Timeline management and prioritization", "Workflow optimization"]} />
