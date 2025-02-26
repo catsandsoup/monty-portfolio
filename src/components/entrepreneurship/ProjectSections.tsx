@@ -18,15 +18,19 @@ const ProjectSections = () => {
             <Card className="p-8 hover:shadow-lg transition-all">
               <h2 className="text-3xl font-medium mb-6 text-gray-900/90">Aged Like Wine</h2>
               <div className="space-y-6 text-gray-600/90">
-                <AspectRatio ratio={16 / 9} className="bg-gray-100 rounded-lg overflow-hidden mb-6">
+                <AspectRatio ratio={3/4} className="bg-gray-100 rounded-lg overflow-hidden mb-6">
                   <img
-                    src="/placeholder.svg"
+                    src="/lovable-uploads/49eb2a2d-7ee7-42f0-a7e0-ae839e1e26dc.png"
                     alt="Aged Like Wine Book Cover"
                     className="object-cover w-full h-full"
                   />
                 </AspectRatio>
+                <div className="flex items-center gap-2 text-sm text-[#00a5ee]">
+                  <span className="px-2 py-1 bg-[#00a5ee]/10 rounded-full">Draft Mode</span>
+                  <span className="px-2 py-1 bg-[#00a5ee]/10 rounded-full">Started 2025</span>
+                </div>
                 <p className="text-lg leading-relaxed">
-                  A comprehensive exploration of aging science and longevity, breaking down complex research into accessible insights for readers passionate about understanding and optimizing their aging process.
+                  An insightful exploration into the science of aging and longevity, examining why some individuals age gracefully while others don't. This book breaks down complex research into accessible insights for readers passionate about understanding and optimizing their aging process.
                 </p>
                 <ul className="space-y-3 list-disc pl-5">
                   <li>Research-backed strategies for healthy aging</li>
@@ -49,27 +53,42 @@ const ProjectSections = () => {
               <h2 className="text-3xl font-medium mb-6 text-gray-900/90">Art & Design</h2>
               <div className="space-y-6 text-gray-600/90">
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <AspectRatio ratio={1} className="bg-gray-100 rounded-lg overflow-hidden">
-                    <img
-                      src="/placeholder.svg"
-                      alt="Artwork Sample 1"
-                      className="object-cover w-full h-full"
-                    />
-                  </AspectRatio>
-                  <AspectRatio ratio={1} className="bg-gray-100 rounded-lg overflow-hidden">
-                    <img
-                      src="/placeholder.svg"
-                      alt="Phone Case Design"
-                      className="object-cover w-full h-full"
-                    />
-                  </AspectRatio>
+                  <div className="space-y-4">
+                    <AspectRatio ratio={1} className="bg-gray-100 rounded-lg overflow-hidden">
+                      <img
+                        src="/lovable-uploads/ec974142-e527-4cba-b7a6-fe7e25e5f6f1.png"
+                        alt="Phone Case Design Sample"
+                        className="object-cover w-full h-full"
+                      />
+                    </AspectRatio>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-[#00a5ee]">Phone Cases</span>
+                      <div className="flex items-center gap-1">
+                        <span className="text-yellow-500">★★★★★</span>
+                        <span className="text-gray-500">(5.0)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <AspectRatio ratio={1} className="bg-gray-100 rounded-lg overflow-hidden">
+                      <img
+                        src="/lovable-uploads/ec974142-e527-4cba-b7a6-fe7e25e5f6f1.png"
+                        alt="Digital Artwork Sample"
+                        className="object-cover w-full h-full"
+                      />
+                    </AspectRatio>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-[#00a5ee]">Digital Art</span>
+                      <span className="text-gray-500">10 Pieces</span>
+                    </div>
+                  </div>
                 </div>
                 <div>
                   <h3 className="text-xl font-medium mb-4">Creative Portfolio</h3>
                   <ul className="space-y-3 list-disc pl-5">
-                    <li>Original artwork and illustrations</li>
-                    <li>Custom phone case designs</li>
-                    <li>Digital and traditional mediums</li>
+                    <li>10 original digital artworks</li>
+                    <li>5 unique phone case designs</li>
+                    <li>5-star customer satisfaction</li>
                     <li>Limited edition collections</li>
                   </ul>
                 </div>

@@ -35,27 +35,27 @@ const KeyMetrics = () => {
   const metrics = [
     {
       icon: <Book className="h-8 w-8" />,
-      title: "Book Publication",
-      value: "2024",
-      description: "Release of 'Aged Like Wine', exploring the science of aging"
+      title: "Book Progress",
+      value: "Draft",
+      description: "Expected completion in 2025"
     },
     {
       icon: <Palette className="h-8 w-8" />,
-      title: "Artworks Created",
-      value: "50+",
-      description: "Original pieces across various mediums and styles"
+      title: "Digital Artworks",
+      value: "10",
+      description: "Original pieces across various styles"
     },
     {
       icon: <PhoneCall className="h-8 w-8" />,
-      title: "Phone Case Designs",
-      value: "20+",
-      description: "Unique phone case designs in circulation"
+      title: "Phone Cases",
+      value: "5",
+      description: "Unique designs in production"
     },
     {
       icon: <Star className="h-8 w-8" />,
       title: "Customer Rating",
-      value: "4.8",
-      description: "Average rating across all creative products"
+      value: "5.0",
+      description: "Perfect satisfaction score"
     }
   ];
 
