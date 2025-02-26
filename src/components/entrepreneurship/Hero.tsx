@@ -25,11 +25,11 @@ const Hero = () => {
           className="text-center px-6"
         >
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
-            Entrepreneurial Ventures
+            Creative Ventures
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
-            From co-founding a speakers club to authoring a book on aging science and launching an art business, 
-            exploring diverse paths of value creation and personal growth.
+            Exploring creativity through literature and visual arts. From authoring "Aged Like Wine" 
+            to creating unique artwork and designer phone cases.
           </p>
         </motion.div>
       </motion.div>

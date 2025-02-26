@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Briefcase, LineChart, Users, Building2 } from "lucide-react";
+import { Book, Palette, PhoneCall, Star } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 interface MetricCardProps {
@@ -34,28 +34,28 @@ const MetricCard = ({ icon, title, value, description, delay = 0 }: MetricCardPr
 const KeyMetrics = () => {
   const metrics = [
     {
-      icon: <Building2 className="h-8 w-8" />,
-      title: "Technology Leadership",
-      value: "30%",
-      description: "Improved service scalability through AI-driven optimization in visualization pipeline"
+      icon: <Book className="h-8 w-8" />,
+      title: "Book Publication",
+      value: "2024",
+      description: "Release of 'Aged Like Wine', exploring the science of aging"
     },
     {
-      icon: <LineChart className="h-8 w-8" />,
-      title: "Project Success",
-      value: "$1M+",
-      description: "Contributed to achieving sales targets through strategic implementations"
+      icon: <Palette className="h-8 w-8" />,
+      title: "Artworks Created",
+      value: "50+",
+      description: "Original pieces across various mediums and styles"
     },
     {
-      icon: <Users className="h-8 w-8" />,
-      title: "Team Leadership",
-      value: "2020-2024",
-      description: "Led cross-functional teams in healthcare technology and startup operations"
+      icon: <PhoneCall className="h-8 w-8" />,
+      title: "Phone Case Designs",
+      value: "20+",
+      description: "Unique phone case designs in circulation"
     },
     {
-      icon: <Briefcase className="h-8 w-8" />,
-      title: "Product Development",
-      value: "2",
-      description: "Innovative products launched: PathologyPro and ThinkTwice platforms"
+      icon: <Star className="h-8 w-8" />,
+      title: "Customer Rating",
+      value: "4.8",
+      description: "Average rating across all creative products"
     }
   ];
 
