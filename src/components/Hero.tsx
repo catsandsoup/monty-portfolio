@@ -1,9 +1,33 @@
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Trophy, Target, Users, Briefcase } from "lucide-react";
+import { Card } from "./ui/card";
 
 const Hero = () => {
+  const achievements = [
+    {
+      icon: <Trophy className="w-5 h-5 text-[#00a5ee]" />,
+      metric: "200%",
+      label: "Client Satisfaction Increase",
+    },
+    {
+      icon: <Target className="w-5 h-5 text-[#00a5ee]" />,
+      metric: "50+",
+      label: "Projects Delivered",
+    },
+    {
+      icon: <Users className="w-5 h-5 text-[#00a5ee]" />,
+      metric: "4+ Years",
+      label: "Leadership Experience",
+    },
+    {
+      icon: <Briefcase className="w-5 h-5 text-[#00a5ee]" />,
+      metric: "3x",
+      label: "Revenue Growth",
+    },
+  ];
+
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
       {/* Background Elements */}
@@ -23,7 +47,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-16"
+            className="mb-12"
           >
             <motion.div 
               animate={{ 
@@ -53,7 +77,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-gray-600 px-4"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-gray-600 px-4"
           >
             Hi, I'm Monty Giovenco
           </motion.h1>
@@ -62,18 +86,50 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="relative mb-20 px-4"
+            className="relative mb-12 px-4"
           >
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 font-light tracking-wide leading-relaxed max-w-2xl mx-auto">
-              Product & Business Strategist crafting digital experiences that drive impact.
-              Specializing in transforming visions into scalable solutions.
+            <h2 className="text-xl sm:text-2xl text-[#00a5ee] font-medium tracking-tight mb-4">
+              Product & Business Strategist
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 font-light tracking-wide leading-relaxed max-w-2xl mx-auto">
+              4+ years leading digital transformation initiatives with measurable impact.
+              Specializing in turning complex challenges into scalable solutions.
             </p>
+          </motion.div>
+
+          {/* Key Achievements Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12 px-4"
+          >
+            {achievements.map((achievement, index) => (
+              <motion.div
+                key={achievement.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 + (index * 0.1) }}
+              >
+                <Card className="p-4 backdrop-blur-xl bg-white/80 border-0 hover:bg-white/90 transition-all duration-300">
+                  <div className="flex items-center justify-center mb-2">
+                    {achievement.icon}
+                  </div>
+                  <div className="text-2xl font-bold text-gray-900 mb-1">
+                    {achievement.metric}
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    {achievement.label}
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
           </motion.div>
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 1 }}
             className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 px-4"
           >
             <motion.div
@@ -110,3 +166,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
