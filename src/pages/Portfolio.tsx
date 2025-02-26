@@ -1,8 +1,8 @@
-
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { ArrowRight, Building2, Code2, LineChart } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const Portfolio = () => {
   const categories = [
@@ -108,6 +108,7 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </motion.section>
   );
 };

@@ -23,7 +23,7 @@ const Hero = () => {
           >
             <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-[#00a5ee] shadow-xl">
               <img
-                src="/placeholder.svg"
+                src="/monty-profile.png"
                 alt="Monty Giovenco"
                 className="w-full h-full object-cover"
               />
@@ -31,7 +31,7 @@ const Hero = () => {
           </motion.div>
 
           <motion.h1 
-            className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 bg-clip-text text-gray-900 dark:text-white"
+            className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 text-gray-900 dark:text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

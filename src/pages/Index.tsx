@@ -1,14 +1,14 @@
 
 import Hero from "@/components/Hero";
 import FeaturedWork from "@/components/FeaturedWork";
-import Testimonials from "@/components/Testimonials";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
       <Hero />
       <FeaturedWork />
-      <Testimonials />
+      <Footer />
     </main>
   );
 };
