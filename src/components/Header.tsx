@@ -56,52 +56,52 @@ const Header = () => {
             : 'bg-transparent'
         }`}
       >
-        <nav className="container mx-auto px-6 h-20 flex items-center justify-between">
-          <Link 
-            to="/" 
-            className="text-xl font-medium text-gray-900 hover:text-[#00a5ee] transition-colors"
-            onClick={closeMenu}
-          >
-            {isHome ? (
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                Monty Giovenco
-              </motion.span>
-            ) : (
-              "Monty Giovenco"
-            )}
-          </Link>
+        <div className="container mx-auto">
+          <nav className="flex items-center justify-between h-20 px-6">
+            <Link 
+              to="/" 
+              className="text-xl font-medium text-gray-900 hover:text-[#00a5ee] transition-colors"
+              onClick={closeMenu}
+            >
+              {isHome ? (
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  Monty Giovenco
+                </motion.span>
+              ) : (
+                "Monty Giovenco"
+              )}
+            </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-gray-600 hover:text-gray-900 transition-colors">
-              Home
-            </Link>
-            <Link to="/experience" className="text-gray-600 hover:text-gray-900 transition-colors">
-              Experience & Projects
-            </Link>
-            <Link to="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
-              About & Resume
-            </Link>
-            <Link to="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
-              Contact
-            </Link>
-          </div>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-8">
+              <Link to="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+                Home
+              </Link>
+              <Link to="/experience" className="text-gray-600 hover:text-gray-900 transition-colors">
+                Experience & Projects
+              </Link>
+              <Link to="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
+                About & Resume
+              </Link>
+              <Link to="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
+                Contact
+              </Link>
+            </div>
 
-          {/* Mobile Menu Button */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="md:hidden p-2 -mr-2 text-gray-900 hover:text-gray-600 transition-colors"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
-        </nav>
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 text-gray-900 hover:text-gray-600 transition-colors"
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </nav>
+        </div>
       </motion.header>
 
       {/* Mobile Navigation Overlay */}
