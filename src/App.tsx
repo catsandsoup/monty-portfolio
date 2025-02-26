@@ -28,22 +28,20 @@ const AppContent = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#00a5ee]/5 to-white/90">
+    <div className="min-h-screen bg-[#00a5ee]/5">
       <ScrollToTop />
       <NavBar items={navItems} />
-      <div className="mt-4">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/portfolio/project-management" element={<ProjectManagement />} />
-          <Route path="/portfolio/product-development" element={<ProductDevelopment />} />
-          <Route path="/portfolio/entrepreneurship" element={<Entrepreneurship />} />
-          <Route path="/portfolio/naturaheal" element={<NaturaHeal />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/experience" element={<Experience />} />
+        <Route path="/portfolio/project-management" element={<ProjectManagement />} />
+        <Route path="/portfolio/product-development" element={<ProductDevelopment />} />
+        <Route path="/portfolio/entrepreneurship" element={<Entrepreneurship />} />
+        <Route path="/portfolio/naturaheal" element={<NaturaHeal />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 };

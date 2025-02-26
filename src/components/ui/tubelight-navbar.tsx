@@ -67,14 +67,16 @@ export function NavBar({ items, className }: NavBarProps) {
                 "flex items-center justify-center"
               )}
             >
-              <span className="hidden md:inline tracking-tight relative z-10">{item.name}</span>
-              <span className="md:hidden relative z-10">
-                <Icon size={18} strokeWidth={2.5} />
-              </span>
+              <div className="relative z-10">
+                <span className="hidden md:inline tracking-tight">{item.name}</span>
+                <span className="md:hidden">
+                  <Icon size={18} strokeWidth={2.5} />
+                </span>
+              </div>
               {isActive && (
                 <motion.div
                   layoutId="lamp"
-                  className="absolute inset-0 w-full h-full bg-[#00a5ee]/5 rounded-full -z-0"
+                  className="absolute inset-0 w-full h-full bg-[#00a5ee]/5 rounded-full"
                   initial={false}
                   transition={{
                     type: "spring",
@@ -101,5 +103,5 @@ export function NavBar({ items, className }: NavBarProps) {
         })}
       </motion.div>
     </div>
-  )
+  );
 }
