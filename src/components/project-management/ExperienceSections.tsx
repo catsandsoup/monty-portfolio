@@ -1,7 +1,19 @@
 
 import { motion } from "framer-motion";
 
-const ExperienceSection = ({ title, items }: { title: string; items: string[] }) => (
+interface ExperienceSectionProps {
+  title: string;
+  items: string[];
+}
+
+interface ExperienceSectionsData {
+  [key: string]: {
+    title: string;
+    items: string[];
+  };
+}
+
+const ExperienceSection = ({ title, items }: ExperienceSectionProps) => (
   <motion.div
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
@@ -18,7 +30,7 @@ const ExperienceSection = ({ title, items }: { title: string; items: string[] })
 );
 
 const ExperienceSections = () => {
-  const sections = {
+  const sections: ExperienceSectionsData = {
     architecturalVisualization: {
       title: "Architectural Visualization Management",
       items: [
