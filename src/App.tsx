@@ -7,6 +7,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "./components/Header";
 import Home from "./pages/Index";
 import Portfolio from "./pages/Portfolio";
+import ProjectManagement from "./pages/ProjectManagement";
+import ProductDevelopment from "./pages/ProductDevelopment";
+import Entrepreneurship from "./pages/Entrepreneurship";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -24,6 +27,9 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/portfolio/project-management" element={<ProjectManagement />} />
+            <Route path="/portfolio/product-development" element={<ProductDevelopment />} />
+            <Route path="/portfolio/entrepreneurship" element={<Entrepreneurship />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
