@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+    <section className="relative min-h-screen w-full overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(0,165,238,0.05)_0,transparent_50%),radial-gradient(circle_at_100%_100%,rgba(0,165,238,0.1)_0,transparent_50%)]" />
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#00a5ee]/10 rounded-full blur-3xl" />
@@ -16,22 +16,37 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="max-w-4xl mx-auto text-center pt-24 md:pt-16"
+          className="max-w-4xl mx-auto text-center pt-24 md:pt-32"
         >
-          {/* Profile Image */}
+          {/* Profile Image with Glow Animation */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-16"
           >
-            <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-[#00a5ee]/20 shadow-[0_0_60px_-15px_rgba(0,165,238,0.3)] transition-all duration-300 hover:scale-105">
+            <motion.div 
+              animate={{ 
+                boxShadow: [
+                  "0 0 40px -5px rgba(0,165,238,0.3)",
+                  "0 0 60px -15px rgba(0,165,238,0.4)",
+                  "0 0 40px -5px rgba(0,165,238,0.3)"
+                ]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }}
+              className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-[#00a5ee]/20 transition-all duration-300 hover:scale-105"
+            >
               <img
                 src="/monty-profile.png"
                 alt="Monty Giovenco"
                 className="w-full h-full object-cover"
               />
-            </div>
+            </motion.div>
           </motion.div>
 
           <motion.h1 

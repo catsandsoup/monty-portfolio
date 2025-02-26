@@ -41,11 +41,16 @@ export function NavBar({ items, className }: NavBarProps) {
   return (
     <div
       className={cn(
-        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
+        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:py-6",
         className,
       )}
     >
-      <div className="flex items-center gap-3 bg-white/80 border border-gray-200/20 backdrop-blur-xl py-1.5 px-1.5 rounded-full shadow-lg">
+      <motion.div 
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="flex items-center gap-3 bg-white/90 border border-gray-200/20 backdrop-blur-xl py-1.5 px-1.5 rounded-full shadow-lg"
+      >
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
@@ -86,7 +91,7 @@ export function NavBar({ items, className }: NavBarProps) {
             </Link>
           )
         })}
-      </div>
+      </motion.div>
     </div>
   )
 }
