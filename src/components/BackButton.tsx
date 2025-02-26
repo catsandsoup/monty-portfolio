@@ -12,6 +12,7 @@ const BackButton = () => {
       initial={{ opacity: 0, x: -10 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
+      className="ml-4 mt-20 md:mt-0"
     >
       <Button
         variant="ghost"

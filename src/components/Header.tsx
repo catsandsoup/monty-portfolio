@@ -1,12 +1,14 @@
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -40,18 +42,37 @@ const Header = () => {
     document.body.style.overflow = 'unset';
   };
 
+  const isHome = location.pathname === '/';
+
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/80 backdrop-blur-xl shadow-sm' : 'bg-transparent'
-      }`}>
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled || !isHome
+            ? 'bg-white/80 backdrop-blur-xl shadow-sm'
+            : 'bg-transparent'
+        }`}
+      >
         <nav className="container mx-auto px-6 h-20 flex items-center justify-between">
           <Link 
             to="/" 
             className="text-xl font-medium text-gray-900 hover:text-[#00a5ee] transition-colors"
             onClick={closeMenu}
           >
-            Monty Giovenco
+            {isHome ? (
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                Monty Giovenco
+              </motion.span>
+            ) : (
+              "Monty Giovenco"
+            )}
           </Link>
 
           {/* Desktop Navigation */}
@@ -71,53 +92,57 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="md:hidden p-2 -mr-2 text-gray-900 hover:text-gray-600 transition-colors"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </motion.button>
         </nav>
-      </header>
+      </motion.header>
 
       {/* Mobile Navigation Overlay */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl">
-          <nav className="container mx-auto px-8 pt-32">
-            <div className="flex flex-col space-y-8">
-              <Link 
-                to="/" 
-                className="text-4xl font-medium text-gray-900 hover:text-[#00a5ee] transition-colors tracking-tight"
-                onClick={closeMenu}
-              >
-                Home
-              </Link>
-              <Link 
-                to="/experience" 
-                className="text-4xl font-medium text-gray-900 hover:text-[#00a5ee] transition-colors tracking-tight"
-                onClick={closeMenu}
-              >
-                Experience & Projects
-              </Link>
-              <Link 
-                to="/about" 
-                className="text-4xl font-medium text-gray-900 hover:text-[#00a5ee] transition-colors tracking-tight"
-                onClick={closeMenu}
-              >
-                About & Resume
-              </Link>
-              <Link 
-                to="/contact" 
-                className="text-4xl font-medium text-gray-900 hover:text-[#00a5ee] transition-colors tracking-tight"
-                onClick={closeMenu}
-              >
-                Contact
-              </Link>
-            </div>
-          </nav>
-        </div>
-      )}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl"
+          >
+            <nav className="container mx-auto px-8 pt-32">
+              <div className="flex flex-col space-y-8">
+                {[
+                  { title: "Home", path: "/" },
+                  { title: "Experience & Projects", path: "/experience" },
+                  { title: "About & Resume", path: "/about" },
+                  { title: "Contact", path: "/contact" }
+                ].map((item) => (
+                  <motion.div
+                    key={item.path}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 20 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Link 
+                      to={item.path} 
+                      className="text-4xl font-medium text-gray-900 hover:text-[#00a5ee] transition-colors tracking-tight"
+                      onClick={closeMenu}
+                    >
+                      {item.title}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
