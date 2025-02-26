@@ -5,13 +5,13 @@ import { ArrowUpRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white">
+    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-gray-50 to-white">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(0,165,238,0.05)_0,transparent_50%),radial-gradient(circle_at_100%_100%,rgba(0,165,238,0.1)_0,transparent_50%)]" />
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#00a5ee]/10 rounded-full blur-3xl" />
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#00a5ee]/5 rounded-full blur-3xl" />
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="relative z-10 w-full px-4 sm:px-6 mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -38,7 +38,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-gray-600"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-gray-600 px-4"
           >
             Hi, I'm Monty Giovenco
           </motion.h1>
@@ -47,10 +47,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="relative mb-20"
+            className="relative mb-20 px-4"
           >
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-light tracking-wide leading-relaxed">
-              Product & Business Strategist crafting digital experiences that drive impact.<br className="hidden sm:block"/>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 font-light tracking-wide leading-relaxed max-w-2xl mx-auto">
+              Product & Business Strategist crafting digital experiences that drive impact.
               Specializing in transforming visions into scalable solutions.
             </p>
           </motion.div>
@@ -59,15 +59,16 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row justify-center items-center gap-8"
+            className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 px-4"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto"
             >
               <Link
                 to="/experience"
-                className="group flex items-center gap-2 px-8 py-4 min-h-[56px] min-w-[200px] text-lg font-medium text-white bg-[#00a5ee] rounded-2xl hover:bg-[#0094d6] transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="group flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto text-lg font-medium text-white bg-[#00a5ee] rounded-2xl hover:bg-[#0094d6] transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 View My Work
                 <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -76,10 +77,11 @@ const Hero = () => {
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto"
             >
               <Link
                 to="/contact"
-                className="group flex items-center gap-2 px-8 py-4 min-h-[56px] min-w-[200px] text-lg font-medium text-[#00a5ee] border-2 border-[#00a5ee] rounded-2xl hover:bg-[#00a5ee]/5 transition-all duration-300"
+                className="group flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto text-lg font-medium text-[#00a5ee] border-2 border-[#00a5ee] rounded-2xl hover:bg-[#00a5ee]/5 transition-all duration-300"
               >
                 Get in Touch
                 <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
