@@ -7,7 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "./components/Header";
 import BackButton from "./components/BackButton";
 import Home from "./pages/Index";
-import Portfolio from "./pages/Portfolio";
+import Experience from "./pages/Portfolio";
 import ProjectManagement from "./pages/ProjectManagement";
 import ProductDevelopment from "./pages/ProductDevelopment";
 import Entrepreneurship from "./pages/Entrepreneurship";
@@ -27,7 +27,7 @@ const AppContent = () => {
       {showBackButton && <BackButton />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/experience" element={<Experience />} />
         <Route path="/portfolio/project-management" element={<ProjectManagement />} />
         <Route path="/portfolio/product-development" element={<ProductDevelopment />} />
         <Route path="/portfolio/entrepreneurship" element={<Entrepreneurship />} />

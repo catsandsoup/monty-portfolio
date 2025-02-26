@@ -47,11 +47,14 @@ const Header = () => {
             <Link to="/" className="text-gray-600 hover:text-gray-900 transition-colors">
               Home
             </Link>
-            <Link to="/portfolio" className="text-gray-600 hover:text-gray-900 transition-colors">
-              Portfolio
+            <Link to="/experience" className="text-gray-600 hover:text-gray-900 transition-colors">
+              Experience & Projects
             </Link>
-            <Link to="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
-              About
+            <Link to="/skills" className="text-gray-600 hover:text-gray-900 transition-colors">
+              Skills & Expertise
+            </Link>
+            <Link to="/resume" className="text-gray-600 hover:text-gray-900 transition-colors">
+              Resume
             </Link>
             <Link to="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
               Contact
@@ -69,38 +72,45 @@ const Header = () => {
         </nav>
       </header>
 
-      {/* Mobile Navigation Overlay */}
+      {/* Mobile Navigation Overlay - Apple-style */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 z-40 bg-white"
+          className="fixed inset-0 z-40 bg-white/95 backdrop-blur-lg"
           style={{ paddingTop: '5rem' }}
         >
           <nav className="container mx-auto px-8">
             <div className="flex flex-col space-y-8">
               <Link 
                 to="/" 
-                className="text-[2.5rem] font-semibold text-gray-900 hover:text-accent transition-colors tracking-tight"
+                className="text-[2rem] font-medium text-gray-900 hover:text-accent transition-colors tracking-tight"
                 onClick={closeMenu}
               >
                 Home
               </Link>
               <Link 
-                to="/portfolio" 
-                className="text-[2.5rem] font-semibold text-gray-900 hover:text-accent transition-colors tracking-tight"
+                to="/experience" 
+                className="text-[2rem] font-medium text-gray-900 hover:text-accent transition-colors tracking-tight"
                 onClick={closeMenu}
               >
-                Portfolio
+                Experience & Projects
               </Link>
               <Link 
-                to="/about" 
-                className="text-[2.5rem] font-semibold text-gray-900 hover:text-accent transition-colors tracking-tight"
+                to="/skills" 
+                className="text-[2rem] font-medium text-gray-900 hover:text-accent transition-colors tracking-tight"
                 onClick={closeMenu}
               >
-                About
+                Skills & Expertise
+              </Link>
+              <Link 
+                to="/resume" 
+                className="text-[2rem] font-medium text-gray-900 hover:text-accent transition-colors tracking-tight"
+                onClick={closeMenu}
+              >
+                Resume
               </Link>
               <Link 
                 to="/contact" 
-                className="text-[2.5rem] font-semibold text-gray-900 hover:text-accent transition-colors tracking-tight"
+                className="text-[2rem] font-medium text-gray-900 hover:text-accent transition-colors tracking-tight"
                 onClick={closeMenu}
               >
                 Contact

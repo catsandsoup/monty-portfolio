@@ -5,30 +5,30 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { ArrowRight, Building2, Code2, LineChart } from "lucide-react";
 import Footer from "@/components/Footer";
 
-const Portfolio = () => {
+const Experience = () => {
   const categories = [
     {
       title: "Project Management",
-      description: "Leading teams and delivering successful outcomes in innovative spaces",
+      description: "Leading strategic initiatives and delivering successful outcomes in innovative spaces",
       icon: <Building2 className="h-8 w-8 text-accent" />,
       path: "/portfolio/project-management",
-      examples: ["House of Manuela", "HomeVR"],
+      examples: ["Strategic Planning", "Team Leadership", "Process Optimization"],
       gradient: "from-blue-50 to-gray-50",
     },
     {
       title: "Product Development",
-      description: "Creating innovative software solutions that drive business growth",
+      description: "Creating innovative software solutions that drive business transformation",
       icon: <Code2 className="h-8 w-8 text-accent" />,
       path: "/portfolio/product-development",
-      examples: ["iOS App", "Education Platform", "Pathology Patient Solution"],
+      examples: ["Digital Product Strategy", "User Experience Design", "Technical Leadership"],
       gradient: "from-gray-50 to-blue-50",
     },
     {
       title: "Entrepreneurship",
-      description: "Building and scaling successful businesses from concept to execution",
+      description: "Building and scaling successful ventures through strategic vision",
       icon: <LineChart className="h-8 w-8 text-accent" />,
       path: "/portfolio/entrepreneurship",
-      examples: ["Art Retail", "Accessory Business", "Book"],
+      examples: ["Business Development", "Market Analysis", "Growth Strategy"],
       gradient: "from-blue-50 to-white",
     },
   ];
@@ -40,7 +40,7 @@ const Portfolio = () => {
       transition={{ duration: 0.6 }}
       className="min-h-screen bg-gradient-to-b from-gray-50 to-white"
     >
-      {/* Profile Image */}
+      {/* Profile Section */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -63,14 +63,14 @@ const Portfolio = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative z-10 text-center px-6"
+          className="relative z-10 text-center px-6 max-w-4xl mx-auto"
         >
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight text-gray-900">
-            Portfolio
+            Experience & Projects
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-light">
-            A curated collection of work spanning project management, product development,
-            and entrepreneurial ventures
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
+            A showcase of strategic leadership, innovative product development, 
+            and successful business transformation initiatives
           </p>
         </motion.div>
       </div>
@@ -130,4 +130,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Experience;
