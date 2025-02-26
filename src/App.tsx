@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Home from "./pages/Index";
 import Experience from "./pages/Experience";
@@ -21,7 +20,6 @@ const queryClient = new QueryClient();
 const AppContent = () => {
   return (
     <div className="min-h-screen bg-white">
-      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
