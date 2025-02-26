@@ -1,0 +1,54 @@
+
+import { motion } from "framer-motion";
+
+const CompanyEvolution = () => {
+  return (
+    <section className="py-24 px-6 bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl font-semibold mb-6 text-gray-900">
+            Company Evolution
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Instrumental in transforming a traditional architectural visualization business 
+            into a technology-driven real estate solutions provider.
+          </p>
+        </motion.div>
+
+        <div className="relative">
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-right md:pr-12"
+            >
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">House of Manuela</h3>
+              <p className="text-gray-600">Traditional architectural visualization studio focused on static renderings and basic 3D modeling</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="md:pl-12"
+            >
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">HomeVR</h3>
+              <p className="text-gray-600">Innovative digital platform providing immersive VR experiences and comprehensive real estate visualization solutions</p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CompanyEvolution;
