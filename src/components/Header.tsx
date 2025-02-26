@@ -56,8 +56,8 @@ const Header = () => {
             : 'bg-transparent'
         }`}
       >
-        <div className="container mx-auto">
-          <nav className="flex items-center justify-between h-20 px-6">
+        <div className="container mx-auto px-6">
+          <nav className="flex items-center justify-between h-20">
             <Link 
               to="/" 
               className="text-xl font-medium text-gray-900 hover:text-[#00a5ee] transition-colors"
@@ -114,7 +114,7 @@ const Header = () => {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl"
           >
-            <nav className="container mx-auto px-8 pt-32">
+            <nav className="container mx-auto px-6 pt-32">
               <div className="flex flex-col space-y-8">
                 {[
                   { title: "Home", path: "/" },

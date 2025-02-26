@@ -11,12 +11,12 @@ const Hero = () => {
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#00a5ee]/10 rounded-full blur-3xl" />
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#00a5ee]/5 rounded-full blur-3xl" />
       
-      <div className="container mx-auto px-6 relative z-10 pt-20">
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-4xl mx-auto text-center pt-32 md:pt-20"
         >
           {/* Profile Image */}
           <motion.div 
