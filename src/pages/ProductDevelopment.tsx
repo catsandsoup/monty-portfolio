@@ -1,9 +1,7 @@
 
+import { motion } from "framer-motion";
 import BackButton from "@/components/BackButton";
-import Hero from "@/components/project-management/Hero";
-import KeyMetrics from "@/components/project-management/KeyMetrics";
-import ExperienceSections from "@/components/project-management/ExperienceSections";
-import CompanyEvolution from "@/components/project-management/CompanyEvolution";
+import ProductShowcase from "@/components/product-development/ProductShowcase";
 
 const ProductDevelopment = () => {
   return (
@@ -12,10 +10,23 @@ const ProductDevelopment = () => {
         <BackButton />
       </div>
       
-      <Hero />
-      <KeyMetrics />
-      <ExperienceSections />
-      <CompanyEvolution />
+      {/* Profile Image */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        className="pt-32 mb-8 flex justify-end pr-12"
+      >
+        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#00a5ee] shadow-xl">
+          <img
+            src="/monty-profile.png"
+            alt="Monty Giovenco"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </motion.div>
+
+      <ProductShowcase />
     </div>
   );
 };

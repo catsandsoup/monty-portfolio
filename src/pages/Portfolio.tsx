@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
@@ -39,6 +40,22 @@ const Portfolio = () => {
       transition={{ duration: 0.6 }}
       className="min-h-screen bg-gradient-to-b from-gray-50 to-white"
     >
+      {/* Profile Image */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        className="pt-32 mb-8 flex justify-center"
+      >
+        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#00a5ee] shadow-xl">
+          <img
+            src="/monty-profile.png"
+            alt="Monty Giovenco"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </motion.div>
+
       {/* Hero Section */}
       <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50/80 to-white/90 backdrop-blur-sm" />
@@ -48,10 +65,10 @@ const Portfolio = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative z-10 text-center px-6"
         >
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-gray-900 mb-6">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight text-gray-900">
             Portfolio
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-light">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-light">
             A curated collection of work spanning project management, product development,
             and entrepreneurial ventures
           </p>
