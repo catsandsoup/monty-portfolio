@@ -30,7 +30,7 @@ const Experience = () => {
     title: "Business Leadership",
     description: "Driving organizational success through strategic vision and operational excellence",
     icon: <Scale className="h-8 w-8 text-[#00a5ee]" />,
-    path: "/naturaheal",
+    path: "/NaturaHeal",
     examples: ["Strategic Decision Making", "Organizational Development", "Change Management", "Business Growth Strategy"],
     gradient: "from-[#00a5ee]/5 via-white to-[#00a5ee]/5"
   }];

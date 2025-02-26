@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 
 interface EvolutionStageProps {
@@ -23,8 +22,22 @@ const EvolutionStage = ({ title, description, isRight = false, delay = 0 }: Evol
 
 const CompanyEvolution = () => {
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-white to-gray-50/90">
-      <div className="container mx-auto max-w-6xl">
+    <>
+      <section className="py-12 px-6 bg-gradient-to-b from-gray-50/90 to-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-xl">
+            <iframe
+              src="https://www.youtube.com/embed/d-hsgpV4dLQ"
+              title="Project Management Overview"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      </section>
+      
+      <section className="py-24 px-6 bg-gradient-to-b from-white to-gray-50/90">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -56,8 +69,8 @@ const CompanyEvolution = () => {
             />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
