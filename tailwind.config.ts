@@ -14,6 +14,14 @@ export default {
       },
     },
     extend: {
+      spacing: {
+        '8': '8px',    // 1 unit
+        '16': '16px',  // 2 units
+        '24': '24px',  // 3 units
+        '32': '32px',  // 4 units
+        '48': '48px',  // 6 units
+        '64': '64px',  // 8 units
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
