@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100">
         <nav className="container mx-auto px-6 h-16 flex items-center justify-between">
           <Link 
             to="/" 
@@ -60,7 +60,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 -mr-2 text-gray-600 hover:text-gray-900 transition-colors"
+            className="md:hidden p-2 -mr-2 text-gray-900 hover:text-gray-600 transition-colors"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -72,35 +72,35 @@ const Header = () => {
       {/* Mobile Navigation Overlay */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 z-40 bg-white/95 backdrop-blur-md"
-          style={{ top: '64px' }}
+          className="fixed inset-0 z-40 bg-white"
+          style={{ paddingTop: '5rem' }}
         >
-          <nav className="h-full flex flex-col items-center justify-center">
-            <div className="flex flex-col items-center space-y-8 text-xl">
+          <nav className="container mx-auto px-8">
+            <div className="flex flex-col space-y-8">
               <Link 
                 to="/" 
-                className="py-2 px-4 text-gray-900 hover:text-accent transition-colors font-medium"
+                className="text-[2.5rem] font-semibold text-gray-900 hover:text-accent transition-colors tracking-tight"
                 onClick={closeMenu}
               >
                 Home
               </Link>
               <Link 
                 to="/portfolio" 
-                className="py-2 px-4 text-gray-900 hover:text-accent transition-colors font-medium"
+                className="text-[2.5rem] font-semibold text-gray-900 hover:text-accent transition-colors tracking-tight"
                 onClick={closeMenu}
               >
                 Portfolio
               </Link>
               <Link 
                 to="/about" 
-                className="py-2 px-4 text-gray-900 hover:text-accent transition-colors font-medium"
+                className="text-[2.5rem] font-semibold text-gray-900 hover:text-accent transition-colors tracking-tight"
                 onClick={closeMenu}
               >
                 About
               </Link>
               <Link 
                 to="/contact" 
-                className="py-2 px-4 text-gray-900 hover:text-accent transition-colors font-medium"
+                className="text-[2.5rem] font-semibold text-gray-900 hover:text-accent transition-colors tracking-tight"
                 onClick={closeMenu}
               >
                 Contact
