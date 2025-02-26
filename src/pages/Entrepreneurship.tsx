@@ -8,10 +8,16 @@ import Footer from "@/components/Footer";
 const Entrepreneurship = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <Hero />
-      <KeyMetrics />
-      <ProjectSections />
-      <Footer />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <Hero />
+        <KeyMetrics />
+        <ProjectSections />
+        <Footer />
+      </motion.div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ const ProjectSections = () => {
     <section className="py-24 px-6 bg-white/90 backdrop-blur-xl">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24">
-          {/* Public Speaking Leadership */}
+          {/* Project Management */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -15,20 +15,20 @@ const ProjectSections = () => {
             transition={{ duration: 0.6 }}
           >
             <Card className="p-8">
-              <h2 className="text-3xl font-medium mb-6 text-gray-900/90">Bathurst Agora Young Speakers</h2>
+              <h2 className="text-3xl font-medium mb-6 text-gray-900/90">Head of Technology</h2>
               <div className="space-y-4 text-gray-600/90">
-                <p>Co-founded and served as president of Bathurst Agora Young Speakers, formerly affiliated with Toastmasters International. Led initiatives to develop public speaking and leadership skills among young professionals.</p>
+                <p>Led technology initiatives at House of Manuela & HomeVR, driving innovation in real estate visualization and SaaS solutions.</p>
                 <ul className="space-y-3 list-disc pl-5">
-                  <li>Established and grew the organization from ground up</li>
-                  <li>Designed comprehensive speaking curriculum</li>
-                  <li>Mentored members in public speaking development</li>
-                  <li>Organized and moderated regular speaking events</li>
+                  <li>Developed white-label SaaS solutions for real estate agencies & builders</li>
+                  <li>Optimized 3D rendering pipeline with AI-driven texture generation</li>
+                  <li>Managed full technology stack and infrastructure</li>
+                  <li>Led end-to-end product development lifecycle</li>
                 </ul>
               </div>
             </Card>
           </motion.div>
 
-          {/* Book Project */}
+          {/* Product Development */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -36,20 +36,29 @@ const ProjectSections = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Card className="p-8">
-              <h2 className="text-3xl font-medium mb-6 text-gray-900/90">'Aged like Wine' - Book Project</h2>
+              <h2 className="text-3xl font-medium mb-6 text-gray-900/90">Product Portfolio</h2>
               <div className="space-y-4 text-gray-600/90">
-                <p>A science-backed guide exploring the impact of lifestyle choices on aging, revealing how up to 90% of visible aging stems from daily habits rather than genetics.</p>
-                <ul className="space-y-3 list-disc pl-5">
-                  <li>Research-driven insights into aging factors</li>
-                  <li>Practical strategies for maintaining youthful skin</li>
-                  <li>Analysis of UV exposure impact on collagen</li>
-                  <li>Cost-effective anti-aging solutions</li>
-                </ul>
+                <div className="mb-6">
+                  <h3 className="text-xl font-medium mb-2">PathologyPro</h3>
+                  <ul className="space-y-2 list-disc pl-5">
+                    <li>Developed interactive dashboard for health data visualization</li>
+                    <li>Conducted user research to inform feature roadmap</li>
+                    <li>Implemented privacy-first architecture</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-medium mb-2">ThinkTwice</h3>
+                  <ul className="space-y-2 list-disc pl-5">
+                    <li>Created education platform for critical thinking development</li>
+                    <li>Designed evidence-based learning paths</li>
+                    <li>Integrated gamification features for engagement</li>
+                  </ul>
+                </div>
               </div>
             </Card>
           </motion.div>
 
-          {/* Art Business */}
+          {/* Additional Experience */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -58,15 +67,25 @@ const ProjectSections = () => {
             className="lg:col-span-2"
           >
             <Card className="p-8">
-              <h2 className="text-3xl font-medium mb-6 text-gray-900/90">Art Business Venture</h2>
-              <div className="space-y-4 text-gray-600/90">
-                <p>Launched a creative business venture in 2023, designing and selling custom phone cases featuring original artwork. Combining artistic expression with practical product design.</p>
-                <ul className="space-y-3 list-disc pl-5">
-                  <li>Created original artwork for product designs</li>
-                  <li>Developed product line of custom phone cases</li>
-                  <li>Established e-commerce presence</li>
-                  <li>Managed production and fulfillment processes</li>
-                </ul>
+              <h2 className="text-3xl font-medium mb-6 text-gray-900/90">Additional Experience</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-4 text-gray-600/90">
+                  <h3 className="text-xl font-medium">NaturaHeal Pty Ltd</h3>
+                  <ul className="space-y-3 list-disc pl-5">
+                    <li>Enhanced inventory management and operational efficiency</li>
+                    <li>Developed comprehensive business analysis and modernization strategy</li>
+                    <li>Created engaging social media marketing campaigns</li>
+                  </ul>
+                </div>
+                <div className="space-y-4 text-gray-600/90">
+                  <h3 className="text-xl font-medium">Skills & Certifications</h3>
+                  <ul className="space-y-3 list-disc pl-5">
+                    <li>Microsoft Business Analyst Certification (Anticipated 2025)</li>
+                    <li>Project Management Foundations</li>
+                    <li>Health Data Visualization</li>
+                    <li>Evidence-Based Decision Making</li>
+                  </ul>
+                </div>
               </div>
             </Card>
           </motion.div>
