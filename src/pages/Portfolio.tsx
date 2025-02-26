@@ -11,21 +11,21 @@ const Portfolio = () => {
       description: "Leading teams and delivering successful outcomes in innovative spaces",
       icon: <Building2 className="h-8 w-8 text-accent" />,
       path: "/portfolio/project-management",
-      examples: ["House of Manuela", "HomeVR", "Enterprise Solutions"],
+      examples: ["House of Manuela", "HomeVR"],
     },
     {
       title: "Product Development",
       description: "Creating innovative software solutions that drive business growth",
       icon: <Code2 className="h-8 w-8 text-accent" />,
       path: "/portfolio/product-development",
-      examples: ["Software Architecture", "Mobile Applications", "Web Platforms"],
+      examples: ["iOS App", "Education Platform", "Pathology Patient Solution"],
     },
     {
       title: "Entrepreneurship",
       description: "Building and scaling successful businesses from concept to execution",
       icon: <LineChart className="h-8 w-8 text-accent" />,
       path: "/portfolio/entrepreneurship",
-      examples: ["Venture Development", "Strategic Growth", "Market Analysis"],
+      examples: ["Art Retail", "Accessory Business", "Book"],
     },
   ];
 
