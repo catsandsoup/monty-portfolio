@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -20,9 +20,6 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const AppContent = () => {
-  const location = useLocation();
-  const isIndex = location.pathname === '/';
-
   const navItems = [
     { name: "Home", url: "/", icon: HomeIcon },
     { name: "Experience & Projects", url: "/experience", icon: Briefcase },
@@ -33,7 +30,7 @@ const AppContent = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#00a5ee]/5 to-white/90">
       <ScrollToTop />
-      <div className={`${isIndex ? 'sticky top-0' : ''} z-50`}>
+      <div className="sticky top-0 z-50">
         <NavBar items={navItems} />
       </div>
       <Routes>

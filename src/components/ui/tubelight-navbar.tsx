@@ -48,7 +48,12 @@ export function NavBar({ items, className }: NavBarProps) {
       <motion.div 
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ 
+          duration: 0.5,
+          type: "spring",
+          stiffness: 100,
+          damping: 20
+        }}
         className="flex items-center gap-3 bg-white/90 border border-gray-200/20 backdrop-blur-xl py-1.5 px-1.5 rounded-full shadow-lg"
       >
         {items.map((item) => {
@@ -61,12 +66,12 @@ export function NavBar({ items, className }: NavBarProps) {
               to={item.url}
               onClick={() => setActiveTab(item.name)}
               className={cn(
-                "relative cursor-pointer text-sm font-medium px-6 py-2.5 rounded-full transition-colors",
+                "relative cursor-pointer text-sm font-medium px-6 py-2.5 rounded-full transition-all duration-350",
                 "text-gray-600 hover:text-[#00a5ee]",
                 isActive && "bg-white/50 text-[#00a5ee]",
               )}
             >
-              <span className="hidden md:inline">{item.name}</span>
+              <span className="hidden md:inline tracking-tight">{item.name}</span>
               <span className="md:hidden">
                 <Icon size={18} strokeWidth={2.5} />
               </span>
@@ -81,11 +86,22 @@ export function NavBar({ items, className }: NavBarProps) {
                     damping: 30,
                   }}
                 >
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-[#00a5ee] rounded-t-full">
+                  <motion.div 
+                    className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-[#00a5ee] rounded-t-full"
+                    animate={{
+                      opacity: [0.6, 1, 0.6],
+                      scale: [1, 1.05, 1]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  >
                     <div className="absolute w-12 h-6 bg-[#00a5ee]/20 rounded-full blur-md -top-2 -left-2" />
                     <div className="absolute w-8 h-6 bg-[#00a5ee]/20 rounded-full blur-md -top-1" />
                     <div className="absolute w-4 h-4 bg-[#00a5ee]/20 rounded-full blur-sm top-0 left-2" />
-                  </div>
+                  </motion.div>
                 </motion.div>
               )}
             </Link>
