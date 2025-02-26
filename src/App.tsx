@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Home, User, Briefcase, MessageSquare } from "lucide-react";
+import { Home as HomeIcon, User, Briefcase, MessageSquare } from "lucide-react";
 import { NavBar } from "./components/ui/tubelight-navbar";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Index";
@@ -21,7 +21,7 @@ const queryClient = new QueryClient();
 
 const AppContent = () => {
   const navItems = [
-    { name: "Home", url: "/", icon: Home },
+    { name: "Home", url: "/", icon: HomeIcon },
     { name: "Experience & Projects", url: "/experience", icon: Briefcase },
     { name: "About", url: "/about", icon: User },
     { name: "Contact", url: "/contact", icon: MessageSquare }
