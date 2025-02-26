@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Building2, Code2, LineChart } from "lucide-react";
+import { ArrowUpRight, Building2, Code2, LineChart } from "lucide-react";
 
 const cards = [
   {
