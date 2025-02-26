@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
@@ -8,31 +9,35 @@ const Experience = () => {
   const categories = [{
     title: "Project Management",
     description: "Leading strategic initiatives and delivering successful outcomes in innovative spaces",
-    icon: <Building2 className="h-8 w-8 text-[#00a5ee]" />,
+    icon: Building2,
     path: "/portfolio/project-management",
     examples: ["Strategic Planning & Roadmap Development", "Cross-functional Team Leadership", "Process Optimization & Implementation", "Stakeholder Management"],
-    gradient: "from-[#00a5ee]/5 to-white"
+    gradient: "from-[#00a5ee]/5 to-white",
+    metrics: { value: "200%", label: "Increase in Client Satisfaction" }
   }, {
     title: "Product Development",
     description: "Creating innovative software solutions that drive business transformation",
-    icon: <Code2 className="h-8 w-8 text-[#00a5ee]" />,
+    icon: Code2,
     path: "/portfolio/product-development",
     examples: ["Digital Product Strategy", "User Experience Design", "Technical Leadership", "Agile Development"],
-    gradient: "from-white via-[#00a5ee]/5 to-white"
+    gradient: "from-white via-[#00a5ee]/5 to-white",
+    metrics: { value: "50+", label: "Projects Delivered" }
   }, {
     title: "Entrepreneurship",
     description: "Building and scaling successful ventures through strategic vision",
-    icon: <LineChart className="h-8 w-8 text-[#00a5ee]" />,
+    icon: LineChart,
     path: "/portfolio/entrepreneurship",
     examples: ["Business Development", "Market Analysis & Strategy", "Growth & Innovation", "Digital Transformation"],
-    gradient: "from-white to-[#00a5ee]/5"
+    gradient: "from-white to-[#00a5ee]/5",
+    metrics: { value: "3x", label: "Revenue Growth" }
   }, {
     title: "Business Leadership",
     description: "Driving organizational success through strategic vision and operational excellence",
-    icon: <Scale className="h-8 w-8 text-[#00a5ee]" />,
-    path: "/NaturaHeal",
+    icon: Scale,
+    path: "/portfolio/naturaheal",
     examples: ["Strategic Decision Making", "Organizational Development", "Change Management", "Business Growth Strategy"],
-    gradient: "from-[#00a5ee]/5 via-white to-[#00a5ee]/5"
+    gradient: "from-[#00a5ee]/5 via-white to-[#00a5ee]/5",
+    metrics: { value: "40%", label: "Cost Optimization" }
   }];
 
   return (
@@ -87,7 +92,7 @@ const Experience = () => {
       </div>
 
       {/* Categories Grid */}
-      <div className="container mx-auto px-6 py-[42px]">
+      <div className="container mx-auto px-6 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {categories.map((category, index) => (
             <motion.div
@@ -106,7 +111,16 @@ const Experience = () => {
                         whileHover={{ scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        {category.icon}
+                        <category.icon className="w-14 h-14 text-[#00a5ee]" />
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                        className="text-right"
+                      >
+                        <div className="text-3xl font-semibold text-[#00a5ee]">{category.metrics.value}</div>
+                        <div className="text-sm text-gray-600">{category.metrics.label}</div>
                       </motion.div>
                     </div>
                     <CardTitle className="text-2xl font-medium text-gray-900 tracking-tight">
