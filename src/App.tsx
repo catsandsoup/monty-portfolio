@@ -11,6 +11,7 @@ import Experience from "./pages/Experience";
 import ProjectManagement from "./pages/ProjectManagement";
 import ProductDevelopment from "./pages/ProductDevelopment";
 import Entrepreneurship from "./pages/Entrepreneurship";
+import NaturaHeal from "./pages/NaturaHeal";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -35,6 +36,7 @@ const AppContent = () => {
         <Route path="/portfolio/project-management" element={<ProjectManagement />} />
         <Route path="/portfolio/product-development" element={<ProductDevelopment />} />
         <Route path="/portfolio/entrepreneurship" element={<Entrepreneurship />} />
+        <Route path="/portfolio/naturaheal" element={<NaturaHeal />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />

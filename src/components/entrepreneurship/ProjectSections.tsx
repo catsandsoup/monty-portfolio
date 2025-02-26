@@ -57,38 +57,6 @@ const ProjectSections = () => {
               </div>
             </Card>
           </motion.div>
-
-          {/* Additional Experience */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="lg:col-span-2"
-          >
-            <Card className="p-8">
-              <h2 className="text-3xl font-medium mb-6 text-gray-900/90">Additional Experience</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-4 text-gray-600/90">
-                  <h3 className="text-xl font-medium">NaturaHeal Pty Ltd</h3>
-                  <ul className="space-y-3 list-disc pl-5">
-                    <li>Enhanced inventory management and operational efficiency</li>
-                    <li>Developed comprehensive business analysis and modernization strategy</li>
-                    <li>Created engaging social media marketing campaigns</li>
-                  </ul>
-                </div>
-                <div className="space-y-4 text-gray-600/90">
-                  <h3 className="text-xl font-medium">Skills & Certifications</h3>
-                  <ul className="space-y-3 list-disc pl-5">
-                    <li>Microsoft Business Analyst Certification (Anticipated 2025)</li>
-                    <li>Project Management Foundations</li>
-                    <li>Health Data Visualization</li>
-                    <li>Evidence-Based Decision Making</li>
-                  </ul>
-                </div>
-              </div>
-            </Card>
-          </motion.div>
         </div>
       </div>
     </section>
