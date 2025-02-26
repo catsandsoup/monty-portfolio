@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="relative pt-32 pb-24 px-6 bg-gradient-to-b from-[#00a5ee]/5 to-white/90 backdrop-blur-xl">
+    <section className="relative min-h-[60vh] flex items-center px-6 bg-gradient-to-b from-[#00a5ee]/5 to-white/90 backdrop-blur-xl">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
