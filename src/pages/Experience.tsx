@@ -72,7 +72,11 @@ const Experience = () => {
               ease: "easeInOut"
             }}
           >
-            <img src="/monty-profile.png" alt="Monty Giovenco" className="w-full h-full object-cover" />
+            <img 
+              src="/monty-profile.png" 
+              alt="Monty Giovenco" 
+              className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
+            />
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
