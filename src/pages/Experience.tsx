@@ -2,33 +2,10 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { ArrowRight, Building2, Code2, LineChart, ShieldCheck, Users, Brain, Scale } from "lucide-react";
+import { Building2, Code2, LineChart } from "lucide-react";
 import Footer from "@/components/Footer";
 
 const Experience = () => {
-  const ethosPrinciples = [
-    {
-      icon: <Brain className="h-6 w-6 text-[#00a5ee]" />,
-      title: "Embracing Discomfort",
-      description: "Thriving in challenging situations and viewing obstacles as opportunities for growth and innovation."
-    },
-    {
-      icon: <Scale className="h-6 w-6 text-[#00a5ee]" />,
-      title: "Complete Ownership",
-      description: "Taking full responsibility for both successes and setbacks, ensuring accountability at every level."
-    },
-    {
-      icon: <Users className="h-6 w-6 text-[#00a5ee]" />,
-      title: "Leadership Through Trust",
-      description: "Building strong relationships and leading through influence, regardless of formal authority."
-    },
-    {
-      icon: <ShieldCheck className="h-6 w-6 text-[#00a5ee]" />,
-      title: "Team Protection",
-      description: "Facilitating seamless collaboration while shielding the team from unnecessary complexity."
-    }
-  ];
-
   const categories = [
     {
       title: "Project Management",
@@ -79,7 +56,7 @@ const Experience = () => {
       className="min-h-screen bg-gradient-to-b from-gray-50 to-white"
     >
       {/* Hero Section with Profile */}
-      <div className="relative h-[65vh] flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#00a5ee]/5 to-transparent">
+      <div className="relative pt-40 pb-16 flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#00a5ee]/5 to-transparent">
         <div className="absolute inset-0 bg-grid-white/[0.02]" />
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -87,7 +64,7 @@ const Experience = () => {
           transition={{ duration: 0.8 }}
           className="relative z-10 flex flex-col items-center"
         >
-          <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#00a5ee] shadow-xl mb-8">
+          <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#00a5ee] shadow-xl mb-6">
             <img
               src="/monty-profile.png"
               alt="Monty Giovenco"
@@ -111,54 +88,8 @@ const Experience = () => {
         </motion.div>
       </div>
 
-      {/* Leadership Ethos Section */}
-      <div className="py-24 bg-white/80 backdrop-blur-xl">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
-              Leadership Philosophy
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Driving success through evidence-based decision making and collaborative leadership
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
-            {ethosPrinciples.map((principle, index) => (
-              <motion.div
-                key={principle.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="h-full backdrop-blur-xl bg-white/90 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <CardHeader>
-                    <div className="mb-4">
-                      {principle.icon}
-                    </div>
-                    <CardTitle className="text-xl font-medium text-gray-900">
-                      {principle.title}
-                    </CardTitle>
-                    <CardDescription className="text-gray-600">
-                      {principle.description}
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Categories Grid */}
-      <div className="container mx-auto px-6 py-24">
+      <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {categories.map((category, index) => (
             <motion.div
@@ -179,7 +110,6 @@ const Experience = () => {
                       >
                         {category.icon}
                       </motion.div>
-                      <ArrowRight className="h-5 w-5 text-[#00a5ee] opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
                     </div>
                     <CardTitle className="text-2xl font-medium text-gray-900 tracking-tight">
                       {category.title}
