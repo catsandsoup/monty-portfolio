@@ -10,7 +10,7 @@ const BackButton = () => {
     <Button
       variant="ghost"
       size="sm"
-      className="fixed left-6 top-24 z-40 flex items-center gap-1.5 text-gray-900 hover:text-blue-600 hover:bg-blue-50 transition-all"
+      className="flex items-center gap-1.5 text-gray-900 hover:text-accent transition-colors bg-white/80 backdrop-blur-sm hover:bg-white/90"
       onClick={() => navigate(-1)}
     >
       <ChevronLeft className="h-5 w-5" />
@@ -20,3 +20,4 @@ const BackButton = () => {
 };
 
 export default BackButton;
+
