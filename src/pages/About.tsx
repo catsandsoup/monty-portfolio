@@ -35,12 +35,7 @@ const About = () => {
           <Card className="p-8 backdrop-blur-xl bg-white/80 shadow-lg border-0">
             <h2 className="text-2xl font-semibold mb-6 text-gray-900">Professional Summary</h2>
             <div className="prose max-w-none text-gray-600">
-              <p className="text-lg leading-relaxed mb-6">
-                As a Product Development leader with over a decade of experience, I specialize in 
-                translating complex business requirements into elegant technical solutions. My approach 
-                combines deep technical expertise with strategic business acumen, ensuring that every 
-                product not only meets immediate needs but scales for future growth.
-              </p>
+              <p className="text-lg leading-relaxed mb-6">As a project manager and product developer with over 4 years of experience, I specialise in translating complex business requirements into elegant technical solutions. My approach combines technical expertise with discovering customer wants and needs, ensuring that every product not only meets immediate requirements but scales for future growth.</p>
               <p className="text-lg leading-relaxed">
                 From concept to deployment, I pride myself on delivering innovative solutions that drive 
                 meaningful impact, while maintaining a strong focus on user experience and technical excellence.
