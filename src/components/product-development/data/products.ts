@@ -1,63 +1,69 @@
 
-import { Activity, Code2, Heart } from 'lucide-react';
-import { LucideIcon } from 'lucide-react';
+import { LucideIcon, Activity, Code2, Heart } from 'lucide-react';
 
-export type Product = {
+export interface Product {
   id: string;
   name: string;
   tagline: string;
   description: string;
+  features: string[];
+  technologies: string[];
   accentColor: string;
   bgColor: string;
   borderColor: string;
   Icon: LucideIcon;
-  features: string[];
-};
+}
 
 export const products: Product[] = [
   {
     id: 'pathology-pro',
     name: 'Pathology Pro',
     tagline: 'Modern Health Metrics Tracking, Simplified',
-    description: 'A sophisticated web application designed to provide intuitive tracking and visualization of blood test results over time.',
+    description: 'An innovative web application that revolutionizes how healthcare professionals and patients track and visualize blood test results over time, making health data more accessible and understandable.',
+    features: [
+      'Intelligent data processing with machine learning algorithms',
+      'Interactive visualization of health metrics over time',
+      'Secure, HIPAA-compliant data storage and handling',
+      'Automated report generation and analysis'
+    ],
+    technologies: ['React', 'TypeScript', 'Node.js', 'TensorFlow'],
     accentColor: 'text-[#00a5ee]',
     bgColor: 'bg-[#00a5ee]/5',
     borderColor: 'border-[#00a5ee]/20',
-    Icon: Activity,
-    features: [
-      'File Upload: Import blood test results from Excel or CSV files',
-      'Data Privacy: All processing happens locally in your browser',
-      'Interactive Dashboard: View health metrics with beautiful charts'
-    ]
+    Icon: Activity
   },
   {
     id: 'think-twice',
     name: 'Think Twice',
     tagline: 'Develop Critical Thinking Skills for the Modern World',
-    description: 'A comprehensive digital platform designed to strengthen critical thinking capabilities through structured learning paths and engaging challenges.',
+    description: 'A comprehensive digital platform designed to strengthen critical thinking capabilities through structured learning paths and engaging challenges, preparing users for real-world decision making.',
+    features: [
+      'Adaptive learning algorithms for personalized progression',
+      'Real-world scenario simulations and case studies',
+      'Collaborative problem-solving environments',
+      'Progress tracking and skill assessment'
+    ],
+    technologies: ['Next.js', 'Python', 'PostgreSQL', 'AI/ML'],
     accentColor: 'text-purple-600',
     bgColor: 'bg-purple-50',
     borderColor: 'border-purple-200',
-    Icon: Code2,
-    features: [
-      'Interactive Learning Journeys: Progress through carefully designed learning paths',
-      'Diverse Challenge Types: Argument analysis, word selection exercises, and more',
-      'Progress Tracking: Monitor advancement with XP rewards and achievement badges'
-    ]
+    Icon: Code2
   },
   {
     id: 'puchi',
     name: 'Puchi',
     tagline: 'Cultivate Your Love Story in the Digital Age',
-    description: 'An elegantly designed iOS application that enables couples to document, celebrate, and preserve their unique relationship journey.',
+    description: 'An elegantly designed iOS application that enables couples to document, celebrate, and preserve their unique relationship journey through modern digital experiences.',
+    features: [
+      'AI-powered moment capture and enhancement',
+      'Private, secure relationship timeline',
+      'Custom relationship milestones and celebrations',
+      'Cross-platform synchronization'
+    ],
+    technologies: ['Swift', 'Firebase', 'CoreML', 'Cloud Storage'],
     accentColor: 'text-rose-500',
     bgColor: 'bg-rose-50',
     borderColor: 'border-rose-200',
-    Icon: Heart,
-    features: [
-      'Digital Love Journal: Create and save personalized love notes with photos',
-      'Personalized Experience: Customizable partner profile with photo',
-      'Smart Organization: Chronological history of all love notes'
-    ]
+    Icon: Heart
   }
 ];
