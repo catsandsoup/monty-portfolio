@@ -72,8 +72,8 @@ const Header = () => {
       {/* Mobile Navigation Overlay */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 z-40 bg-white/98 backdrop-blur-md"
-          style={{ top: '64px' }} // Height of the header
+          className="fixed inset-0 z-40 bg-white/95 backdrop-blur-md"
+          style={{ top: '64px' }}
         >
           <nav className="h-full flex flex-col items-center justify-center">
             <div className="flex flex-col items-center space-y-8 text-xl">
