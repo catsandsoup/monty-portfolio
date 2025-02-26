@@ -28,9 +28,11 @@ const AppContent = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#00a5ee]/5">
+    <div className="min-h-screen bg-gradient-to-b from-[#00a5ee]/5 to-white/90">
       <ScrollToTop />
-      <NavBar items={navItems} />
+      <div className="sticky top-0 z-50">
+        <NavBar items={navItems} />
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/experience" element={<Experience />} />
