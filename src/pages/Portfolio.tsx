@@ -37,7 +37,7 @@ const Portfolio = () => {
         transition={{ duration: 0.5 }}
         className="container mx-auto"
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-8">Portfolio</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Portfolio</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category, index) => (
             <motion.div
@@ -47,13 +47,13 @@ const Portfolio = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link to={category.path} className="block h-full">
-                <Card className="h-full group hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-accent/10">
+                <Card className="h-full group hover:shadow-lg transition-all duration-300 border-2 border-transparent hover:border-accent/20">
                   <CardHeader>
                     <div className="flex items-center justify-between mb-2">
                       {category.icon}
                       <ArrowRight className="h-5 w-5 text-accent opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
                     </div>
-                    <CardTitle className="text-2xl font-semibold">
+                    <CardTitle className="text-2xl font-semibold text-gray-900">
                       {category.title}
                     </CardTitle>
                     <CardDescription className="text-gray-600">
@@ -65,7 +65,7 @@ const Portfolio = () => {
                       {category.examples.map((example) => (
                         <li
                           key={example}
-                          className="text-sm text-gray-600 hover:text-accent transition-colors"
+                          className="text-sm text-gray-500 hover:text-accent transition-colors"
                         >
                           {example}
                         </li>
