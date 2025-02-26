@@ -1,8 +1,7 @@
-
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Building2, Code2, LineChart, Scale } from "lucide-react";
+import { Building2, Code2, LineChart, Scale, ChevronRight } from "lucide-react";
 import Footer from "@/components/Footer";
 
 const Experience = () => {
@@ -56,8 +55,9 @@ const Experience = () => {
           transition={{ duration: 0.8 }}
           className="relative z-10 flex flex-col items-center"
         >
-          <motion.div 
-            className="w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-[#00a5ee] shadow-xl mb-6"
+          <motion.button
+            className="group relative w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-[#00a5ee] shadow-xl mb-6 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00a5ee] focus:ring-offset-2"
+            whileHover={{ scale: 1.02 }}
             animate={{ 
               boxShadow: [
                 "0 0 40px -5px rgba(0,165,238,0.3)",
@@ -74,10 +74,15 @@ const Experience = () => {
           >
             <img 
               src="/monty-profile.png" 
-              alt="Monty Giovenco" 
-              className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
+              alt="View Monty's profile" 
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-          </motion.div>
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+              <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
+                View Profile
+              </span>
+            </div>
+          </motion.button>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -106,7 +111,7 @@ const Experience = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <Link to={category.path}>
+              <Link to={category.path} className="block group/card focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00a5ee] focus-visible:ring-offset-2 rounded-2xl">
                 <Card className="h-full group relative overflow-hidden backdrop-blur-xl bg-white/90 border border-gray-100 hover:shadow-xl transition-all duration-500">
                   <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-50 transition-opacity duration-500 group-hover:opacity-70`} />
                   <CardHeader className="relative z-10">
@@ -127,16 +132,17 @@ const Experience = () => {
                         <div className="text-sm text-gray-600">{category.metrics.label}</div>
                       </motion.div>
                     </div>
-                    <CardTitle className="text-2xl font-medium text-gray-900 tracking-tight">
+                    <CardTitle className="text-2xl font-medium text-gray-900 tracking-tight flex items-center justify-between">
                       {category.title}
+                      <ChevronRight className="w-5 h-5 text-[#00a5ee] opacity-0 -translate-x-2 transition-all duration-300 group-hover/card:opacity-100 group-hover/card:translate-x-0" />
                     </CardTitle>
                     <CardDescription className="text-gray-600">
                       {category.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="relative z-10">
-                    <ul className="space-y-3">
-                      {category.examples.map((example, idx) => (
+                    <div className="space-y-3">
+                      {category.examples.slice(0, 3).map((example, idx) => (
                         <motion.li
                           key={example}
                           initial={{ opacity: 0, x: -10 }}
@@ -148,8 +154,16 @@ const Experience = () => {
                           <span>{example}</span>
                         </motion.li>
                       ))}
-                    </ul>
+                      {category.examples.length > 3 && (
+                        <div className="text-sm text-[#00a5ee] mt-2 group-hover/card:underline transition-all duration-300">
+                          View {category.examples.length - 3} more examples
+                        </div>
+                      )}
+                    </div>
                   </CardContent>
+                  <div className="absolute bottom-6 right-6 text-sm text-[#00a5ee] font-medium opacity-0 transform translate-y-2 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300">
+                    View Details
+                  </div>
                 </Card>
               </Link>
             </motion.div>
