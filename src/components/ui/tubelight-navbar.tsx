@@ -54,7 +54,7 @@ export function NavBar({
       type: "spring",
       stiffness: 100,
       damping: 20
-    }} className="flex items-center gap-3 bg-white/90 border border-gray-200/20 backdrop-blur-xl rounded-full shadow-lg px-0 py-0">
+    }} className="flex items-center gap-3 bg-white/90 border border-gray-200/20 backdrop-blur-xl rounded-full shadow-lg px-[3px] py-[7px]">
         {items.map(item => {
         const Icon = item.icon;
         const isActive = activeTab === item.name;
