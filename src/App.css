@@ -1,4 +1,3 @@
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -27,84 +26,10 @@
   }
 }
 
-/* Base typography styles */
-h1, h2, h3, h4, h5, h6 {
-  font-family: -apple-system, 'SF Pro Display', system-ui, sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
+.card {
+  padding: 2em;
 }
 
-body {
-  font-family: -apple-system, 'SF Pro Text', system-ui, sans-serif;
-  font-weight: 400;
-  letter-spacing: -0.25px;
-  line-height: 1.5;
-}
-
-/* Ensure consistent paragraph spacing */
-p {
-  margin-bottom: 1.25rem;
-}
-
-/* Base container padding */
-.container {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* Section spacing */
-section {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-/* Hero spacing */
-.hero-section {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-/* Navigation spacing */
-nav {
-  margin-bottom: 2rem;
-}
-
-/* Profile image spacing */
-.profile-image {
-  margin: 2.5rem 0;
-}
-
-/* Content sections spacing */
-.content-section {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-
-/* 8px grid baseline */
-.baseline-grid {
-  background-size: 8px 8px;
-  background-image: linear-gradient(to right, rgba(0, 165, 238, 0.1) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(0, 165, 238, 0.1) 1px, transparent 1px);
-}
-
-/* Gallery improvements */
-.gallery-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.75rem;
-  transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-  transform: scale(1.02);
+.read-the-docs {
+  color: #888;
 }
