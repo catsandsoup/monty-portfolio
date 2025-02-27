@@ -1,28 +1,41 @@
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Building2, Code2, LineChart } from "lucide-react";
-const cards = [{
-  title: "Project Management",
-  icon: Building2,
-  description: "Leading cross-functional teams to deliver groundbreaking solutions that drive business transformation.",
-  link: "/portfolio/project-management",
-  gradient: "from-[#00a5ee]/10 to-[#0094d6]/5",
-  delay: 0
-}, {
-  title: "Product Development",
-  icon: Code2,
-  description: "Crafting intuitive digital experiences that seamlessly blend innovation with user-centered design.",
-  link: "/portfolio/product-development",
-  gradient: "from-[#00a5ee]/5 to-[#0094d6]/10",
-  delay: 0.2
-}, {
-  title: "Entrepreneurship",
-  icon: LineChart,
-  description: "Building and scaling successful ventures through strategic vision and market insights.",
-  link: "/portfolio/entrepreneurship",
-  gradient: "from-[#00a5ee]/8 to-[#0094d6]/8",
-  delay: 0.4
-}];
+import { ArrowUpRight, Building2, Code2, LineChart, Scale } from "lucide-react";
+const cards = [
+  {
+    title: "Business Leadership",
+    icon: Scale,
+    description: "Driving organisational success through strategic vision and operational excellence.",
+    link: "/portfolio/naturaheal",
+    gradient: "from-[#00a5ee]/5 to-[#0094d6]/10",
+    delay: 0
+  },
+  {
+    title: "Entrepreneurship",
+    icon: LineChart,
+    description: "Building and scaling successful ventures through strategic vision and market insights.",
+    link: "/portfolio/entrepreneurship",
+    gradient: "from-[#00a5ee]/5 to-[#0094d6]/10",
+    delay: 0.2
+  }, 
+  {
+    title: "Product Development",
+    icon: Code2,
+    description: "Crafting intuitive digital experiences that seamlessly blend innovation with user-centred design.",
+    link: "/portfolio/product-development",
+    gradient: "from-[#00a5ee]/5 to-[#0094d6]/10",
+    delay: 0.4
+  },
+  {
+    title: "Project Management",
+    icon: Building2,
+    description: "Leading cross-functional teams to deliver groundbreaking solutions that drive business transformation.",
+    link: "/portfolio/project-management",
+    gradient: "from-[#00a5ee]/5 to-[#0094d6]/10",
+    delay: 0.6
+  }
+];
 const FeaturedWork = () => {
   return <section className="relative overflow-hidden py-[14px]">
       <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white py-0" />
@@ -42,7 +55,7 @@ const FeaturedWork = () => {
           My Expertise
         </motion.h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {cards.map(card => <motion.div key={card.title} initial={{
           opacity: 0,
           y: 20

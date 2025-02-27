@@ -1,54 +1,60 @@
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Building2, Code2, LineChart, Scale, ChevronRight } from "lucide-react";
 import Footer from "@/components/Footer";
 const Experience = () => {
-  const categories = [{
-    title: "Project Management",
-    description: "Leading strategic initiatives and delivering successful outcomes in innovative spaces",
-    icon: Building2,
-    path: "/portfolio/project-management",
-    examples: ["Strategic Planning & Roadmap Development", "Cross-functional Team Leadership", "Process Optimization & Implementation", "Stakeholder Management"],
-    gradient: "from-[#00a5ee]/5 to-white",
-    metrics: {
-      value: "200%",
-      label: "Increase in Client Satisfaction"
+  const categories = [
+    {
+      title: "Business Leadership",
+      description: "Driving organisational success through strategic vision and operational excellence",
+      icon: Scale,
+      path: "/portfolio/naturaheal",
+      examples: ["Strategic Decision Making", "Organisational Development", "Change Management", "Business Growth Strategy"],
+      gradient: "from-[#00a5ee]/5 to-white",
+      metrics: {
+        value: "40%",
+        label: "Cost Optimisation"
+      }
+    },
+    {
+      title: "Entrepreneurship",
+      description: "Building and scaling successful ventures through strategic vision",
+      icon: LineChart,
+      path: "/portfolio/entrepreneurship",
+      examples: ["Business Development", "Market Analysis & Strategy", "Growth & Innovation", "Digital Transformation"],
+      gradient: "from-[#00a5ee]/5 to-white",
+      metrics: {
+        value: "3",
+        label: "Personal Projects"
+      }
+    },
+    {
+      title: "Product Development",
+      description: "We turn your off the plan house and land developments that don't – as yet – exist into beautiful, immersive virtual experiences.",
+      icon: Code2,
+      path: "/portfolio/product-development",
+      examples: ["Digital Product Strategy", "User Experience Design", "Technical Leadership", "Agile Development"],
+      gradient: "from-[#00a5ee]/5 to-white",
+      metrics: {
+        value: "4",
+        label: "Projects Delivered"
+      }
+    },
+    {
+      title: "Project Management",
+      description: "Leading strategic initiatives and delivering successful outcomes in innovative spaces",
+      icon: Building2,
+      path: "/portfolio/project-management",
+      examples: ["Strategic Planning & Roadmap Development", "Cross-functional Team Leadership", "Process Optimisation & Implementation", "Stakeholder Management"],
+      gradient: "from-[#00a5ee]/5 to-white",
+      metrics: {
+        value: "200%",
+        label: "Increase in Client Satisfaction"
+      }
     }
-  }, {
-    title: "Product Development",
-    description: "We turn your off the plan house and land developments that don't – as yet – exist into beautiful, immersive virtual experiences.",
-    icon: Code2,
-    path: "/portfolio/product-development",
-    examples: ["Digital Product Strategy", "User Experience Design", "Technical Leadership", "Agile Development"],
-    gradient: "from-white via-[#00a5ee]/5 to-white",
-    metrics: {
-      value: "4",
-      label: "Projects Delivered"
-    }
-  }, {
-    title: "Entrepreneurship",
-    description: "Building and scaling successful ventures through strategic vision",
-    icon: LineChart,
-    path: "/portfolio/entrepreneurship",
-    examples: ["Business Development", "Market Analysis & Strategy", "Growth & Innovation", "Digital Transformation"],
-    gradient: "from-white to-[#00a5ee]/5",
-    metrics: {
-      value: "3",
-      label: "Personal Projects"
-    }
-  }, {
-    title: "Business Leadership",
-    description: "Driving organizational success through strategic vision and operational excellence",
-    icon: Scale,
-    path: "/portfolio/naturaheal",
-    examples: ["Strategic Decision Making", "Organizational Development", "Change Management", "Business Growth Strategy"],
-    gradient: "from-[#00a5ee]/5 via-white to-[#00a5ee]/5",
-    metrics: {
-      value: "40%",
-      label: "Cost Optimization"
-    }
-  }];
+  ];
   return <motion.section initial={{
     opacity: 0
   }} animate={{
