@@ -49,7 +49,7 @@ const KeyMetrics = () => {
     value: "50%",
     description: "Reduction in client decision time through implementation of VR visualisation platform"
   }];
-  return <section className="py-24 px-6 bg-white/[0.31]">
+  return <section className="py-24 px-6 bg-gradient-to-b from-[#00a5ee]/5 to-white/90 backdrop-blur-xl">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {metrics.map((metric, index) => <MetricCard key={metric.title} {...metric} delay={index * 0.2} />)}
