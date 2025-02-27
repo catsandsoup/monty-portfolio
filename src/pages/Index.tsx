@@ -9,7 +9,7 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Monty Giovenco",
-    "url": "https://montygiovento.com",
+    "url": "https://montyg.me",
     "jobTitle": "Business Leader & Digital Innovator",
     "address": {
       "@type": "PostalAddress",
