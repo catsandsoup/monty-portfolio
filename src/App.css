@@ -1,3 +1,4 @@
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -26,10 +27,35 @@
   }
 }
 
-.card {
-  padding: 2em;
+/* Base typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, 'SF Pro Display', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
-.read-the-docs {
-  color: #888;
+body {
+  font-family: -apple-system, 'SF Pro Text', system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+  line-height: 1.5;
 }
+
+/* Ensure consistent paragraph spacing */
+p {
+  margin-bottom: 1rem; /* 16px */
+}
+
+/* Base container padding */
+.container {
+  padding-left: 2.5rem; /* 40px */
+  padding-right: 2.5rem; /* 40px */
+}
+
+/* 8px grid baseline */
+.baseline-grid {
+  background-size: 8px 8px;
+  background-image: linear-gradient(to right, rgba(0, 165, 238, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 165, 238, 0.1) 1px, transparent 1px);
+}
+
