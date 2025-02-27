@@ -44,7 +44,7 @@ const KeyMetrics = () => {
     value: "35%",
     description: "Improvement in inventory turnover through modernized management systems"
   }, {
-    icon: <Users className="h-8 w-8 text-[#4CAF50]" />,
+    icon: <Users className="h-8 w-8 text-[#07c51e]" />,
     title: "Customer Engagement",
     value: "50%",
     description: "Increase in social media engagement through targeted marketing campaigns"
