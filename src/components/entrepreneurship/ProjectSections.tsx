@@ -62,7 +62,7 @@ const ProjectSections = () => {
                   My creative journey began in late 2022, born from a desire to find art that truly resonated with my vision. Unable to find pieces that captured my aesthetic in retail stores, I embarked on creating my own digital artworks, leading to a collection that bridges personal expression with modern design.
                 </p>
 
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   <motion.div 
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.2 }}
@@ -70,13 +70,41 @@ const ProjectSections = () => {
                   >
                     <AspectRatio ratio={1} className="bg-gray-100 rounded-2xl overflow-hidden">
                       <img 
-                        src="/lovable-uploads/ec974142-e527-4cba-b7a6-fe7e25e5f6f1.png" 
-                        alt="Phone Case Design Sample" 
+                        src="/lovable-uploads/ef9a131b-4df7-4586-97f3-573291a9ff2c.png" 
+                        alt="Luxury Marble Phone Case Design" 
                         className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" 
                       />
                     </AspectRatio>
                   </motion.div>
                   
+                  <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                    className="group relative"
+                  >
+                    <AspectRatio ratio={1} className="bg-gray-100 rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/0265bb65-c62c-4d47-8153-71f11e9287eb.png" 
+                        alt="Elegant Gold Marble Case" 
+                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" 
+                      />
+                    </AspectRatio>
+                  </motion.div>
+                  
+                  <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                    className="group relative"
+                  >
+                    <AspectRatio ratio={1} className="bg-gray-100 rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/f8bfc781-053b-49a0-95b8-b2c2ff8fb600.png" 
+                        alt="Dark Marble Gold Accent Case" 
+                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" 
+                      />
+                    </AspectRatio>
+                  </motion.div>
+
                   <motion.div 
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.2 }}
@@ -101,6 +129,20 @@ const ProjectSections = () => {
                         alt="Abstract Art Piece" 
                         className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" 
                         src="/lovable-uploads/0c252223-0b9d-41ca-87b2-752554f26788.png" 
+                      />
+                    </AspectRatio>
+                  </motion.div>
+
+                  <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                    className="group relative"
+                  >
+                    <AspectRatio ratio={1} className="bg-gray-100 rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/ec974142-e527-4cba-b7a6-fe7e25e5f6f1.png" 
+                        alt="Phone Case Design Sample" 
+                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" 
                       />
                     </AspectRatio>
                   </motion.div>
