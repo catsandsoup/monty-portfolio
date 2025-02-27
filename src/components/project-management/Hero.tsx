@@ -70,7 +70,7 @@ const Hero = () => {
             y: 0
           }} transition={{
             duration: 0.8
-          }}>
+          }} className="mx-[29px]">
               <h1 className="text-5xl mb-6 tracking-tight font-semibold md:text-6xl text-slate-950">
                 Project Management
               </h1>
