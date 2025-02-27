@@ -1,7 +1,9 @@
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Trophy, Target, Users, Briefcase } from "lucide-react";
 import { Card } from "./ui/card";
+
 const Hero = () => {
   const achievements = [{
     icon: <Trophy className="w-5 h-5 text-[#00a5ee]" />,
@@ -9,7 +11,7 @@ const Hero = () => {
     label: "Client Satisfaction Increase"
   }, {
     icon: <Target className="w-5 h-5 text-[#00a5ee]" />,
-    metric: "50+",
+    metric: "10+",
     label: "Projects Delivered"
   }, {
     icon: <Users className="w-5 h-5 text-[#00a5ee]" />,
@@ -17,9 +19,10 @@ const Hero = () => {
     label: "Leadership Experience"
   }, {
     icon: <Briefcase className="w-5 h-5 text-[#00a5ee]" />,
-    metric: "3x",
-    label: "Revenue Growth"
+    metric: "3",
+    label: "Industries of Experience by Age 25"
   }];
+
   return <section className="relative min-h-screen w-full overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(0,165,238,0.05)_0,transparent_50%),radial-gradient(circle_at_100%_100%,rgba(0,165,238,0.1)_0,transparent_50%)]" />
@@ -156,4 +159,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
