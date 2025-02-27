@@ -6,7 +6,7 @@ import CompanyEvolution from "@/components/naturaheal/CompanyEvolution";
 
 const NaturaHeal = () => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+    <div className="relative min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 overflow-x-hidden">
       <Hero />
       <KeyMetrics />
       <ExperienceSections />
