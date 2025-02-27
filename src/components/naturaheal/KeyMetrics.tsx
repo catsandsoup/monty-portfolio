@@ -34,13 +34,13 @@ const MetricCard = ({ icon, title, value, description, delay = 0 }: MetricCardPr
 const KeyMetrics = () => {
   const metrics = [
     {
-      icon: <TrendingUp className="h-8 w-8 text-[#8B5CF6]" />,
+      icon: <TrendingUp className="h-8 w-8 text-[#4CAF50]" />,
       title: "Operational Efficiency",
       value: "35%",
       description: "Improvement in inventory turnover through modernized management systems"
     },
     {
-      icon: <Users className="h-8 w-8 text-[#8B5CF6]" />,
+      icon: <Users className="h-8 w-8 text-[#4CAF50]" />,
       title: "Customer Engagement",
       value: "50%",
       description: "Increase in social media engagement through targeted marketing campaigns"
