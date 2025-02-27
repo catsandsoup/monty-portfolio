@@ -63,56 +63,58 @@ const Hero = () => {
 
   return (
     <>
-      <section className="relative min-h-[60vh] flex items-center px-6 bg-gradient-to-b from-[#00a5ee]/5 to-white/90 backdrop-blur-xl pt-24">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl md:text-6xl font-semibold text-gray-900/90 mb-6 tracking-tight">
-              Project Management
-            </h1>
-            <p className="text-xl text-gray-600/90 max-w-3xl leading-relaxed">
-              Led the digital transformation and brand evolution of House of Manuela to HomeVR, 
-              orchestrating comprehensive project management and business leadership initiatives
-              that resulted in 200% growth in online sales.
-            </p>
-          </motion.div>
-        </div>
-        
-        <div className="absolute top-1/2 right-0 w-64 h-64 bg-gradient-to-br from-[#00a5ee]/10 to-purple-100/10 rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-gradient-to-tr from-[#00a5ee]/10 to-blue-100/10 rounded-full blur-3xl -z-10" />
-      </section>
-
-      <section className="py-24 px-6 bg-white/80 backdrop-blur-xl">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-semibold mb-4 text-gray-900/90">
-              Key Features
-            </h2>
-            <p className="text-lg text-gray-600/90 max-w-2xl mx-auto">
-              Comprehensive virtual tour solutions designed to enhance property showcase and client engagement
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {usps.map((usp, index) => (
-              <USPCard
-                key={usp.title}
-                {...usp}
-                delay={index * 0.1}
-              />
-            ))}
+      <div className="w-full overflow-x-hidden">
+        <section className="relative min-h-[60vh] flex items-center bg-gradient-to-b from-[#00a5ee]/5 to-white/90 backdrop-blur-xl">
+          <div className="container mx-auto max-w-6xl px-6 pt-24">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl md:text-6xl font-semibold text-gray-900/90 mb-6 tracking-tight">
+                Project Management
+              </h1>
+              <p className="text-xl text-gray-600/90 max-w-3xl leading-relaxed">
+                Led the digital transformation and brand evolution of House of Manuela to HomeVR, 
+                orchestrating comprehensive project management and business leadership initiatives
+                that resulted in 200% growth in online sales.
+              </p>
+            </motion.div>
           </div>
-        </div>
-      </section>
+          
+          <div className="absolute top-1/2 right-0 w-64 h-64 bg-gradient-to-br from-[#00a5ee]/10 to-purple-100/10 rounded-full blur-3xl -z-10" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-gradient-to-tr from-[#00a5ee]/10 to-blue-100/10 rounded-full blur-3xl -z-10" />
+        </section>
+
+        <section className="py-24 bg-white/80 backdrop-blur-xl">
+          <div className="container mx-auto max-w-6xl px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl font-semibold mb-4 text-gray-900/90">
+                Key Features
+              </h2>
+              <p className="text-lg text-gray-600/90 max-w-2xl mx-auto">
+                Comprehensive virtual tour solutions designed to enhance property showcase and client engagement
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {usps.map((usp, index) => (
+                <USPCard
+                  key={usp.title}
+                  {...usp}
+                  delay={index * 0.1}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
     </>
   );
 };
