@@ -6,7 +6,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Home as HomeIcon, User, Briefcase, MessageSquare } from "lucide-react";
 import { NavBar } from "./components/ui/tubelight-navbar";
-import CustomCursor from "./components/ui/CustomCursor";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Index";
 import Experience from "./pages/Experience";
@@ -29,8 +28,7 @@ const AppContent = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#00a5ee]/5 to-white/90">
-      <CustomCursor />
+    <div className="min-h-screen relative bg-gradient-to-b from-[#00a5ee]/5 to-white/90">
       <ScrollToTop />
       <div className="sticky top-0 z-50">
         <NavBar items={navItems} />
