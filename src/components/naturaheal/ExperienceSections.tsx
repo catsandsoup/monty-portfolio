@@ -20,7 +20,7 @@ const ExperienceSection = ({
   once: true
 }} transition={{
   duration: 0.6
-}}>
+}} className="bg-white rounded-none">
     <h2 className="text-3xl font-medium mb-8 text-green-500">{title}</h2>
     <div className="space-y-4 text-gray-600/90">
       {items.map((item, index) => <p key={index}>• {item}</p>)}
