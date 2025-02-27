@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
@@ -15,12 +16,12 @@ const Experience = () => {
     metrics: { value: "200%", label: "Increase in Client Satisfaction" }
   }, {
     title: "Product Development",
-    description: "Creating innovative software solutions that drive business transformation",
+    description: "We turn your off the plan house and land developments that don't – as yet – exist into beautiful, immersive virtual experiences.",
     icon: Code2,
     path: "/portfolio/product-development",
     examples: ["Digital Product Strategy", "User Experience Design", "Technical Leadership", "Agile Development"],
     gradient: "from-white via-[#00a5ee]/5 to-white",
-    metrics: { value: "50+", label: "Projects Delivered" }
+    metrics: { value: "4", label: "Projects Delivered" }
   }, {
     title: "Entrepreneurship",
     description: "Building and scaling successful ventures through strategic vision",
@@ -28,7 +29,7 @@ const Experience = () => {
     path: "/portfolio/entrepreneurship",
     examples: ["Business Development", "Market Analysis & Strategy", "Growth & Innovation", "Digital Transformation"],
     gradient: "from-white to-[#00a5ee]/5",
-    metrics: { value: "3x", label: "Revenue Growth" }
+    metrics: { value: "3", label: "Personal Projects" }
   }, {
     title: "Business Leadership",
     description: "Driving organizational success through strategic vision and operational excellence",
