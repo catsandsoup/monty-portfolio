@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Factory, Building, Chip, Trophy, Users } from "lucide-react";
+import { ArrowUpRight, Factory, Building, CircuitBoard, Trophy, Users } from "lucide-react";
 import { Card } from "./ui/card";
 
 const Hero = () => {
@@ -18,7 +18,7 @@ const Hero = () => {
     metric: "Real Estate",
     label: "Industry Experience"
   }, {
-    icon: <Chip className="w-5 h-5 text-[#00a5ee]" />,
+    icon: <CircuitBoard className="w-5 h-5 text-[#00a5ee]" />,
     metric: "Technology",
     label: "Industry Experience"
   }];
