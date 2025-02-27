@@ -15,7 +15,7 @@ const Footer = () => {
         >
           <div className="flex items-center space-x-12">
             <motion.a
-              href="https://github.com/montygiovento"
+              href="https://github.com/catsandsoup"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
@@ -24,7 +24,7 @@ const Footer = () => {
               <Github className="h-8 w-8" />
             </motion.a>
             <motion.a
-              href="https://linkedin.com/in/montygiovento"
+              href="https://linkedin.com/in/montygiovenco"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
