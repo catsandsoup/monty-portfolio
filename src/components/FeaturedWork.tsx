@@ -24,8 +24,8 @@ const cards = [{
   delay: 0.4
 }];
 const FeaturedWork = () => {
-  return <section className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white" />
+  return <section className="relative overflow-hidden py-[14px]">
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white py-0" />
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.h2 initial={{
@@ -38,7 +38,7 @@ const FeaturedWork = () => {
         duration: 0.6
       }} viewport={{
         once: true
-      }} className="text-4xl font-bold text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 my-0 py-[13px] md:text-6xl">
+      }} className="text-4xl font-bold mb-20 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 py-0 my-[24px] text-center md:text-6xl">
           My Expertise
         </motion.h2>
         
