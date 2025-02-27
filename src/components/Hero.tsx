@@ -1,7 +1,6 @@
-
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Trophy, Target, Users, Briefcase } from "lucide-react";
+import { ArrowUpRight, Trophy, Target, Users } from "lucide-react";
 import { Card } from "./ui/card";
 
 const Hero = () => {
@@ -13,18 +12,13 @@ const Hero = () => {
     },
     {
       icon: <Target className="w-5 h-5 text-[#00a5ee]" />,
-      metric: "50+",
+      metric: "7+",
       label: "Projects Delivered",
     },
     {
       icon: <Users className="w-5 h-5 text-[#00a5ee]" />,
       metric: "4+ Years",
       label: "Leadership Experience",
-    },
-    {
-      icon: <Briefcase className="w-5 h-5 text-[#00a5ee]" />,
-      metric: "3x",
-      label: "Revenue Growth",
     },
   ];
 
@@ -102,7 +96,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12 px-4"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12 px-4"
           >
             {achievements.map((achievement, index) => (
               <motion.div
@@ -166,4 +160,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

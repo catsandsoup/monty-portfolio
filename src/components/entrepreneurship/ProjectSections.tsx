@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import InteractiveBentoGallery from "@/components/ui/interactive-bento-gallery";
+import { phoneCaseGalleryItems } from "./gallery-config";
 
 const ProjectSections = () => {
   return (
@@ -42,7 +44,7 @@ const ProjectSections = () => {
             </Card>
           </motion.div>
 
-          {/* Art & Phone Cases Business */}
+          {/* Phone Cases Gallery */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -51,47 +53,12 @@ const ProjectSections = () => {
           >
             <Card className="p-8 hover:shadow-lg transition-all">
               <h2 className="text-3xl font-medium mb-6 text-gray-900/90">Art & Design</h2>
-              <div className="space-y-6 text-gray-600/90">
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="space-y-4">
-                    <AspectRatio ratio={1} className="bg-gray-100 rounded-lg overflow-hidden">
-                      <img
-                        src="/lovable-uploads/ec974142-e527-4cba-b7a6-fe7e25e5f6f1.png"
-                        alt="Phone Case Design Sample"
-                        className="object-cover w-full h-full"
-                      />
-                    </AspectRatio>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-[#00a5ee]">Phone Cases</span>
-                      <div className="flex items-center gap-1">
-                        <span className="text-yellow-500">★★★★★</span>
-                        <span className="text-gray-500">(5.0)</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <AspectRatio ratio={1} className="bg-gray-100 rounded-lg overflow-hidden">
-                      <img
-                        src="/lovable-uploads/ec974142-e527-4cba-b7a6-fe7e25e5f6f1.png"
-                        alt="Digital Artwork Sample"
-                        className="object-cover w-full h-full"
-                      />
-                    </AspectRatio>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-[#00a5ee]">Digital Art</span>
-                      <span className="text-gray-500">10 Pieces</span>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-medium mb-4">Creative Portfolio</h3>
-                  <ul className="space-y-3 list-disc pl-5">
-                    <li>10 original digital artworks</li>
-                    <li>5 unique phone case designs</li>
-                    <li>5-star customer satisfaction</li>
-                    <li>Limited edition collections</li>
-                  </ul>
-                </div>
+              <div className="space-y-6">
+                <InteractiveBentoGallery
+                  mediaItems={phoneCaseGalleryItems}
+                  title="Phone Case Collection"
+                  description="Explore our unique marble-inspired designs"
+                />
               </div>
             </Card>
           </motion.div>
