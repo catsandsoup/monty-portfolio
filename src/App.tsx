@@ -23,7 +23,7 @@ const queryClient = new QueryClient();
 const AppContent = () => {
   const navItems = [
     { name: "Home", url: "/", icon: HomeIcon },
-    { name: "Experience & Projects", url: "/experience", icon: Briefcase },
+    { name: "Experience", url: "/experience", icon: Briefcase },
     { name: "About", url: "/about", icon: User },
     { name: "Contact", url: "/contact", icon: MessageSquare }
   ];
