@@ -78,7 +78,7 @@ export function NavBar({
               to={item.url}
               onClick={() => setActiveTab(item.name)}
               className={cn(
-                "relative cursor-pointer text-base font-medium px-8 py-2.5 rounded-full transition-all duration-350",
+                "relative cursor-pointer text-base font-medium px-6 py-2.5 rounded-full transition-all duration-350",
                 "text-gray-600 hover:text-[#00a5ee]",
                 "md:text-xl md:font-semibold", // 25% larger font and slightly heavier weight for desktop
                 isActive && `bg-white/50 text-[${accentColor}]`
@@ -87,7 +87,7 @@ export function NavBar({
             >
               <span className="hidden md:inline tracking-tight">{item.name}</span>
               <span className="md:hidden">
-                <Icon size={22} strokeWidth={2.5} />
+                <Icon size={22} strokeWidth={2.5} /> {/* Slightly larger icons for mobile */}
               </span>
               {isActive && (
                 <motion.div
@@ -102,7 +102,7 @@ export function NavBar({
                   style={{ backgroundColor: `${accentColor}05` }}
                 >
                   <motion.div
-                    className="absolute -top-2 left-1/2 -translate-x-1/2 w-12 h-1 rounded-t-full"
+                    className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 rounded-t-full"
                     animate={{
                       opacity: [0.6, 1, 0.6],
                       scale: [1, 1.05, 1]
@@ -115,15 +115,15 @@ export function NavBar({
                     style={{ backgroundColor: accentColor }}
                   >
                     <div
-                      className="absolute w-16 h-6 rounded-full blur-md -top-2 -left-2"
+                      className="absolute w-12 h-6 rounded-full blur-md -top-2 -left-2"
                       style={{ backgroundColor: `${accentColor}20` }}
                     />
                     <div
-                      className="absolute w-12 h-6 rounded-full blur-md -top-1"
+                      className="absolute w-8 h-6 rounded-full blur-md -top-1"
                       style={{ backgroundColor: `${accentColor}20` }}
                     />
                     <div
-                      className="absolute w-8 h-4 rounded-full blur-sm top-0"
+                      className="absolute w-4 h-4 rounded-full blur-sm top-0"
                       style={{ backgroundColor: `${accentColor}20` }}
                     />
                   </motion.div>
