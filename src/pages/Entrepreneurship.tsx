@@ -5,6 +5,8 @@ import KeyMetrics from "@/components/entrepreneurship/KeyMetrics";
 import ProjectSections from "@/components/entrepreneurship/ProjectSections";
 import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet";
+import { sectionAnimation } from "@/lib/animation";
+import { colors } from "@/lib/design-tokens";
 
 const Entrepreneurship = () => {
   return (
@@ -13,11 +15,11 @@ const Entrepreneurship = () => {
         <title>Entrepreneurship | Monty Giovenco</title>
         <meta name="description" content="Explore Monty Giovenco's entrepreneurial ventures and achievements. Building and scaling successful ventures through strategic vision and market insights." />
       </Helmet>
-      <div className="relative min-h-screen bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+      <div className={`relative min-h-screen ${colors.gradients.grayFade} overflow-hidden`}>
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
+          variants={sectionAnimation}
+          initial="hidden"
+          animate="visible"
           className="w-full"
         >
           <Hero />
