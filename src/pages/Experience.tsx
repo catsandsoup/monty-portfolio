@@ -109,10 +109,12 @@ const Experience = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group"
             >
-              <Link to={category.path} className="block group/card focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00a5ee] focus-visible:ring-offset-2 rounded-2xl">
-                <Card className="h-full group relative overflow-hidden backdrop-blur-xl bg-white/90 border border-gray-100 hover:shadow-xl transition-all duration-500">
+              <Link 
+                to={category.path} 
+                className="block h-full group relative focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00a5ee] focus-visible:ring-offset-2 rounded-2xl"
+              >
+                <Card className="h-full relative overflow-hidden backdrop-blur-xl bg-white/90 border border-gray-100 hover:shadow-xl transition-all duration-500">
                   <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-50 transition-opacity duration-500 group-hover:opacity-70`} />
                   <CardHeader className="relative z-10">
                     <div className="flex items-center justify-between mb-4">
@@ -134,7 +136,7 @@ const Experience = () => {
                     </div>
                     <CardTitle className="text-2xl font-medium text-gray-900 tracking-tight flex items-center justify-between">
                       {category.title}
-                      <ChevronRight className="w-5 h-5 text-[#00a5ee] opacity-0 -translate-x-2 transition-all duration-300 group-hover/card:opacity-100 group-hover/card:translate-x-0" />
+                      <ChevronRight className="w-5 h-5 text-[#00a5ee] opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
                     </CardTitle>
                     <CardDescription className="text-gray-600">
                       {category.description}
@@ -142,7 +144,7 @@ const Experience = () => {
                   </CardHeader>
                   <CardContent className="relative z-10">
                     <div className="space-y-3">
-                      {category.examples.slice(0, 3).map((example, idx) => (
+                      {category.examples.map((example, idx) => (
                         <motion.li
                           key={example}
                           initial={{ opacity: 0, x: -10 }}
@@ -154,14 +156,9 @@ const Experience = () => {
                           <span>{example}</span>
                         </motion.li>
                       ))}
-                      {category.examples.length > 3 && (
-                        <div className="text-sm text-[#00a5ee] mt-2 group-hover/card:underline transition-all duration-300">
-                          View {category.examples.length - 3} more examples
-                        </div>
-                      )}
                     </div>
                   </CardContent>
-                  <div className="absolute bottom-6 right-6 text-sm text-[#00a5ee] font-medium opacity-0 transform translate-y-2 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300">
+                  <div className="absolute bottom-6 right-6 text-sm text-[#00a5ee] font-medium opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
                     View Details
                   </div>
                 </Card>
