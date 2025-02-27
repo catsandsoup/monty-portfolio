@@ -31,7 +31,7 @@ const CompanyEvolution = () => {
       }} transition={{
         duration: 0.6
       }} className="text-center mb-16">
-          <h2 className="text-4xl font-semibold text-gray-900/90 mb-4">
+          <h2 className="font-semibold mb-4 text-[green-500green-500] text-green-500">
             Company Evolution
           </h2>
           <p className="text-xl text-gray-600/90 max-w-2xl mx-auto">
