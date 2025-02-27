@@ -49,7 +49,7 @@ const KeyMetrics = () => {
     value: "50%",
     description: "Increase in social media engagement through targeted marketing campaigns"
   }];
-  return <section className="py-24 px-6">
+  return <section className="px-6 py-[57px]">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {metrics.map((metric, index) => <MetricCard key={metric.title} {...metric} delay={index * 0.2} />)}
