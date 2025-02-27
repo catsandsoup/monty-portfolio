@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -54,9 +55,13 @@ const ProjectSections = () => {
               <div className="space-y-8">
                 <div className="space-y-2">
                   <h2 className="text-4xl font-medium tracking-tight text-gray-900/90">Art & Design</h2>
-                  <p className="text-lg text-gray-500">Crafting digital experiences that inspire</p>
+                  <p className="text-lg text-gray-500">A journey from inspiration to creation</p>
                 </div>
                 
+                <p className="text-gray-600 leading-relaxed">
+                  My creative journey began in late 2022, born from a desire to find art that truly resonated with my vision. Unable to find pieces that captured my aesthetic in retail stores, I embarked on creating my own digital artworks, leading to a collection that bridges personal expression with modern design.
+                </p>
+
                 <div className="grid grid-cols-3 gap-3">
                   <motion.div 
                     whileHover={{ scale: 1.02 }}
