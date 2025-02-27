@@ -99,9 +99,7 @@ const Hero = () => {
           }} transition={{
             duration: 0.8
           }} className="text-center mb-16">
-              <h2 className="text-3xl font-semibold mb-4 text-gray-900/90">
-                Key Features
-              </h2>
+              <h2 className="mb-4 text-gray-900/90 font-semibold text-5xl">Interactive Real Estate Web Tours</h2>
               <p className="text-lg text-gray-600/90 max-w-2xl mx-auto">
                 Comprehensive virtual tour solutions designed to enhance property showcase and client engagement
               </p>
