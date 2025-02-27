@@ -83,10 +83,7 @@ const Hero = () => {
             <h2 className="text-xl sm:text-2xl text-[#00a5ee] font-medium tracking-tight mb-4">
               Product & Business Strategist
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 font-light tracking-wide leading-relaxed max-w-2xl mx-auto">
-              4+ years leading digital transformation initiatives with measurable impact.
-              Specializing in turning complex challenges into scalable solutions.
-            </p>
+            <p className="text-base sm:text-lg text-gray-600 tracking-wide leading-relaxed max-w-2xl mx-auto py-[23px] font-medium">4 years leading digital transformation initiatives with measurable impact. Specializing in turning complex challenges into scalable solutions.</p>
           </motion.div>
 
           {/* Key Achievements Section */}
