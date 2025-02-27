@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import InteractiveBentoGallery from "@/components/ui/interactive-bento-gallery";
 import { phoneCaseGalleryItems } from "./gallery-config";
 
 const ProjectSections = () => {
@@ -53,12 +52,29 @@ const ProjectSections = () => {
         >
           <Card className="p-8 hover:shadow-lg transition-all bg-white/80 backdrop-blur-sm">
             <h2 className="text-3xl font-medium mb-8 text-gray-900/90">Art & Design</h2>
-            <div className="space-y-8">
-              <InteractiveBentoGallery
-                mediaItems={phoneCaseGalleryItems}
-                title="Phone Case Collection"
-                description="Explore our unique marble-inspired designs"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {phoneCaseGalleryItems.map((item) => (
+                <motion.div
+                  key={item.id}
+                  className="group relative rounded-xl overflow-hidden"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <AspectRatio ratio={3/4}>
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title}
+                      className="object-cover w-full h-full"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                        <h3 className="text-lg font-medium">{item.title}</h3>
+                        <p className="text-sm text-white/80">{item.description}</p>
+                      </div>
+                    </div>
+                  </AspectRatio>
+                </motion.div>
+              ))}
             </div>
           </Card>
         </motion.div>
