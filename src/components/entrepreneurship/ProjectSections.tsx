@@ -1,6 +1,8 @@
+
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 const ProjectSections = () => {
   return <section className="py-24 px-6 bg-white/90 backdrop-blur-xl">
       <div className="container mx-auto max-w-6xl">
@@ -52,17 +54,13 @@ const ProjectSections = () => {
             <Card className="p-8 hover:shadow-lg transition-all">
               <h2 className="text-3xl font-medium mb-6 text-gray-900/90">Art & Design</h2>
               <div className="space-y-6 text-gray-600/90">
-                <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="grid grid-cols-3 gap-4 mb-6">
                   <div className="space-y-4">
                     <AspectRatio ratio={1} className="bg-gray-100 rounded-lg overflow-hidden">
                       <img src="/lovable-uploads/ec974142-e527-4cba-b7a6-fe7e25e5f6f1.png" alt="Phone Case Design Sample" className="object-cover w-full h-full" />
                     </AspectRatio>
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-[#00a5ee]">Phone Cases</span>
-                      <div className="flex items-center gap-1">
-                        <span className="text-yellow-500">★★★★★</span>
-                        <span className="text-gray-500">(5.0)</span>
-                      </div>
                     </div>
                   </div>
                   <div className="space-y-4">
@@ -71,7 +69,14 @@ const ProjectSections = () => {
                     </AspectRatio>
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-[#00a5ee]">Digital Art</span>
-                      <span className="text-gray-500">10 Pieces</span>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <AspectRatio ratio={1} className="bg-gray-100 rounded-lg overflow-hidden">
+                      <img alt="Abstract Art Piece" className="object-cover w-full h-full" src="/lovable-uploads/0c252223-0b9d-41ca-87b2-752554f26788.png" />
+                    </AspectRatio>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-[#00a5ee]">Abstract Art</span>
                     </div>
                   </div>
                 </div>
@@ -91,4 +96,5 @@ const ProjectSections = () => {
       </div>
     </section>;
 };
+
 export default ProjectSections;
