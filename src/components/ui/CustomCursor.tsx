@@ -32,7 +32,7 @@ const CustomCursor = () => {
       ref={containerRef}
       className="fixed inset-0 pointer-events-none z-50"
       style={{
-        background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${cursorColor}, transparent 37.5%)`, // Reduced from 50% to 37.5%
+        background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${cursorColor}, transparent 18.75%)`,
       }}
     />
   );
