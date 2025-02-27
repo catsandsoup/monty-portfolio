@@ -25,7 +25,7 @@ const MetricCard = ({ icon, title, value, description, delay = 0 }: MetricCardPr
       <h3 className="text-2xl font-medium mb-3 text-gray-900/90">
         {title}
       </h3>
-      <p className="text-4xl font-bold text-[#8B5CF6] mb-4">{value}</p>
+      <p className="text-4xl font-bold text-[#4CAF50] mb-4">{value}</p>
       <p className="text-gray-600/90">{description}</p>
     </Card>
   </motion.div>
