@@ -78,15 +78,16 @@ export function NavBar({
               to={item.url}
               onClick={() => setActiveTab(item.name)}
               className={cn(
-                "relative cursor-pointer text-sm font-medium px-6 py-2.5 rounded-full transition-all duration-350",
+                "relative cursor-pointer text-base font-medium px-6 py-2.5 rounded-full transition-all duration-350",
                 "text-gray-600 hover:text-[#00a5ee]",
+                "md:text-xl md:font-semibold", // 25% larger font and slightly heavier weight for desktop
                 isActive && `bg-white/50 text-[${accentColor}]`
               )}
               style={isActive ? { color: accentColor } : undefined}
             >
               <span className="hidden md:inline tracking-tight">{item.name}</span>
               <span className="md:hidden">
-                <Icon size={18} strokeWidth={2.5} />
+                <Icon size={22} strokeWidth={2.5} /> {/* Slightly larger icons for mobile */}
               </span>
               {isActive && (
                 <motion.div
