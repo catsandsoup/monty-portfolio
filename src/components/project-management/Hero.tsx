@@ -86,7 +86,7 @@ const Hero = () => {
           <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-gradient-to-tr from-[#00a5ee]/10 to-blue-100/10 rounded-full blur-3xl -z-10" />
         </section>
 
-        <section className="py-24 bg-white/80 backdrop-blur-xl">
+        <section className="bg-white/80 backdrop-blur-xl py-[34px]">
           <div className="container mx-auto max-w-6xl px-6">
             <motion.div initial={{
             opacity: 0,
