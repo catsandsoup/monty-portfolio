@@ -102,7 +102,7 @@ export function NavBar({
                   style={{ backgroundColor: `${accentColor}05` }}
                 >
                   <motion.div
-                    className="absolute -top-2 inset-x-0 mx-auto w-8 h-1 rounded-t-full"
+                    className="absolute -top-2 inset-x-0 mx-auto w-12 h-1 rounded-t-full"
                     animate={{
                       opacity: [0.6, 1, 0.6],
                       scale: [1, 1.05, 1]
