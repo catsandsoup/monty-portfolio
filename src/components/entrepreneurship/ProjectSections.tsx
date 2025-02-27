@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -40,7 +39,7 @@ const ProjectSections = () => {
             </Card>
           </motion.div>
 
-          {/* Art & Phone Cases Business */}
+          {/* Art & Design */}
           <motion.div initial={{
           opacity: 0
         }} whileInView={{
@@ -51,43 +50,77 @@ const ProjectSections = () => {
           duration: 0.6,
           delay: 0.2
         }}>
-            <Card className="p-8 hover:shadow-lg transition-all">
-              <h2 className="text-3xl font-medium mb-6 text-gray-900/90">Art & Design</h2>
-              <div className="space-y-6 text-gray-600/90">
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="space-y-4">
-                    <AspectRatio ratio={1} className="bg-gray-100 rounded-lg overflow-hidden">
-                      <img src="/lovable-uploads/ec974142-e527-4cba-b7a6-fe7e25e5f6f1.png" alt="Phone Case Design Sample" className="object-cover w-full h-full" />
-                    </AspectRatio>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-[#00a5ee]">Phone Cases</span>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <AspectRatio ratio={1} className="bg-gray-100 rounded-lg overflow-hidden">
-                      <img alt="Digital Artwork Sample" className="object-cover w-full h-full" src="/lovable-uploads/1d9d49fd-e9e6-427f-9b9f-674bf0cf103f.jpg" />
-                    </AspectRatio>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-[#00a5ee]">Digital Art</span>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <AspectRatio ratio={1} className="bg-gray-100 rounded-lg overflow-hidden">
-                      <img alt="Abstract Art Piece" className="object-cover w-full h-full" src="/lovable-uploads/0c252223-0b9d-41ca-87b2-752554f26788.png" />
-                    </AspectRatio>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-[#00a5ee]">Abstract Art</span>
-                    </div>
-                  </div>
+            <Card className="p-8 hover:shadow-lg transition-all overflow-hidden">
+              <div className="space-y-8">
+                <div className="space-y-2">
+                  <h2 className="text-4xl font-medium tracking-tight text-gray-900/90">Art & Design</h2>
+                  <p className="text-lg text-gray-500">Crafting digital experiences that inspire</p>
                 </div>
-                <div>
-                  <h3 className="text-xl font-medium mb-4">Creative Portfolio</h3>
-                  <ul className="space-y-3 list-disc pl-5">
-                    <li>10 original digital artworks</li>
-                    <li>5 unique phone case designs</li>
-                    <li>5-star customer satisfaction</li>
-                    <li>Limited edition collections</li>
-                  </ul>
+                
+                <div className="grid grid-cols-3 gap-3">
+                  <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                    className="group relative"
+                  >
+                    <AspectRatio ratio={1} className="bg-gray-100 rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/ec974142-e527-4cba-b7a6-fe7e25e5f6f1.png" 
+                        alt="Phone Case Design Sample" 
+                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" 
+                      />
+                    </AspectRatio>
+                  </motion.div>
+                  
+                  <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                    className="group relative"
+                  >
+                    <AspectRatio ratio={1} className="bg-gray-100 rounded-2xl overflow-hidden">
+                      <img 
+                        alt="Digital Artwork Sample" 
+                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" 
+                        src="/lovable-uploads/1d9d49fd-e9e6-427f-9b9f-674bf0cf103f.jpg" 
+                      />
+                    </AspectRatio>
+                  </motion.div>
+                  
+                  <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                    className="group relative"
+                  >
+                    <AspectRatio ratio={1} className="bg-gray-100 rounded-2xl overflow-hidden">
+                      <img 
+                        alt="Abstract Art Piece" 
+                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" 
+                        src="/lovable-uploads/0c252223-0b9d-41ca-87b2-752554f26788.png" 
+                      />
+                    </AspectRatio>
+                  </motion.div>
+                </div>
+
+                <div className="pt-6 border-t border-gray-100">
+                  <h3 className="text-2xl font-medium mb-6 text-gray-900/90">Creative Portfolio</h3>
+                  <div className="grid grid-cols-2 gap-x-12 gap-y-4">
+                    <div className="space-y-1">
+                      <p className="text-3xl font-medium text-gray-900">10</p>
+                      <p className="text-sm text-gray-500">Original Digital Artworks</p>
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-3xl font-medium text-gray-900">5</p>
+                      <p className="text-sm text-gray-500">Unique Phone Cases</p>
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-3xl font-medium text-gray-900">5.0</p>
+                      <p className="text-sm text-gray-500">Customer Rating</p>
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-3xl font-medium text-gray-900">Limited</p>
+                      <p className="text-sm text-gray-500">Edition Collections</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Card>
