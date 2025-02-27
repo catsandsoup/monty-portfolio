@@ -39,7 +39,7 @@ const MetricCard = ({
   </motion.div>;
 const KeyMetrics = () => {
   const metrics = [{
-    icon: <TrendingUp className="h-8 w-8 text-[#4CAF50]" />,
+    icon: <TrendingUp className="h-8 w-8 text-[#07c51e] mx-0" />,
     title: "Operational Efficiency",
     value: "35%",
     description: "Improvement in inventory turnover through modernized management systems"
