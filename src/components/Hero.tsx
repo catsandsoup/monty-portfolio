@@ -1,9 +1,7 @@
-
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Trophy, Target, Users, Briefcase } from "lucide-react";
 import { Card } from "./ui/card";
-
 const Hero = () => {
   const achievements = [{
     icon: <Trophy className="w-5 h-5 text-[#00a5ee]" />,
@@ -22,7 +20,6 @@ const Hero = () => {
     metric: "3",
     label: "Industries of Experience by Age 25"
   }];
-
   return <section className="relative min-h-screen w-full overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(0,165,238,0.05)_0,transparent_50%),radial-gradient(circle_at_100%_100%,rgba(0,165,238,0.1)_0,transparent_50%)]" />
@@ -83,9 +80,7 @@ const Hero = () => {
           duration: 0.8,
           delay: 0.6
         }} className="relative mb-12 px-4">
-            <h2 className="text-xl sm:text-2xl text-[#00a5ee] font-medium tracking-tight mb-4">
-              Product & Business Strategist
-            </h2>
+            <h2 className="text-xl sm:text-2xl text-[#00a5ee] font-medium tracking-tight mb-4">Product &amp; Business Management</h2>
             <p className="text-base sm:text-lg text-gray-600 tracking-wide leading-relaxed max-w-2xl mx-auto py-[23px] font-medium">4 years leading digital transformation initiatives with measurable impact. Specializing in turning complex challenges into scalable solutions.</p>
           </motion.div>
 
@@ -159,5 +154,4 @@ const Hero = () => {
       </div>
     </section>;
 };
-
 export default Hero;
