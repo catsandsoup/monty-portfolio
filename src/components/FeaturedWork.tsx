@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Building2, Code2, LineChart, Scale } from "lucide-react";
+
+// Alphabetized cards based on title
 const cards = [
   {
     title: "Business Leadership",
@@ -17,7 +19,7 @@ const cards = [
     description: "Building and scaling successful ventures through strategic vision and market insights.",
     link: "/portfolio/entrepreneurship",
     gradient: "from-[#00a5ee]/5 to-[#0094d6]/10",
-    delay: 0.2
+    delay: 0.1
   }, 
   {
     title: "Product Development",
@@ -25,7 +27,7 @@ const cards = [
     description: "Crafting intuitive digital experiences that seamlessly blend innovation with user-centred design.",
     link: "/portfolio/product-development",
     gradient: "from-[#00a5ee]/5 to-[#0094d6]/10",
-    delay: 0.4
+    delay: 0.2
   },
   {
     title: "Project Management",
@@ -33,9 +35,10 @@ const cards = [
     description: "Leading cross-functional teams to deliver groundbreaking solutions that drive business transformation.",
     link: "/portfolio/project-management",
     gradient: "from-[#00a5ee]/5 to-[#0094d6]/10",
-    delay: 0.6
+    delay: 0.3
   }
 ];
+
 const FeaturedWork = () => {
   return <section className="relative overflow-hidden py-[14px]">
       <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white py-0" />
@@ -88,4 +91,5 @@ const FeaturedWork = () => {
       </div>
     </section>;
 };
+
 export default FeaturedWork;
