@@ -66,7 +66,7 @@ const Hero = () => {
         }} transition={{
           duration: 0.8,
           delay: 0.4
-        }} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-gray-600 px-4">
+        }} className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-gray-600 px-4 py-[30px] lg:text-7xl">
             Hi, I'm Monty Giovenco
           </motion.h1>
 
@@ -81,7 +81,7 @@ const Hero = () => {
           delay: 0.6
         }} className="relative mb-12 px-4">
             <h2 className="text-xl sm:text-2xl text-[#00a5ee] font-medium tracking-tight mb-4">Product &amp; Business Management</h2>
-            <p className="text-base sm:text-lg text-gray-600 tracking-wide leading-relaxed max-w-2xl mx-auto py-[23px] font-medium">4 years leading digital transformation initiatives with measurable impact. Specializing in turning complex challenges into scalable solutions.</p>
+            <p className="text-base tracking-wide leading-relaxed max-w-2xl mx-auto py-[23px] text-slate-950 font-medium sm:text-2xl">4 years leading digital transformation initiatives with measurable impact. Specializing in turning complex challenges into scalable solutions.</p>
           </motion.div>
 
           {/* Key Achievements Section */}
