@@ -53,20 +53,9 @@ export function NavBar({
   return (
     <div className={cn("fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:py-6", className)}>
       <motion.div
-        initial={{
-          y: -20,
-          opacity: 0
-        }}
-        animate={{
-          y: 0,
-          opacity: 1
-        }}
-        transition={{
-          duration: 0.5,
-          type: "spring",
-          stiffness: 100,
-          damping: 20
-        }}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, type: "spring", stiffness: 100, damping: 20 }}
         className="flex items-center gap-3 bg-white/90 border border-gray-200/20 backdrop-blur-xl py-1.5 px-1.5 rounded-full shadow-lg"
       >
         {items.map(item => {
@@ -80,14 +69,14 @@ export function NavBar({
               className={cn(
                 "relative cursor-pointer text-base font-medium px-6 py-2.5 rounded-full transition-all duration-350",
                 "text-gray-600 hover:text-[#00a5ee]",
-                "md:text-xl md:font-semibold", // 25% larger font and slightly heavier weight for desktop
+                "md:text-xl md:font-semibold",
                 isActive && `bg-white/50 text-[${accentColor}]`
               )}
               style={isActive ? { color: accentColor } : undefined}
             >
               <span className="hidden md:inline tracking-tight">{item.name}</span>
               <span className="md:hidden">
-                <Icon size={22} strokeWidth={2.5} /> {/* Slightly larger icons for mobile */}
+                <Icon size={22} strokeWidth={2.5} />
               </span>
               {isActive && (
                 <motion.div
@@ -102,7 +91,7 @@ export function NavBar({
                   style={{ backgroundColor: `${accentColor}05` }}
                 >
                   <motion.div
-                    className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 rounded-t-full"
+                    className="absolute -top-2 left-1/2 -translate-x-1/2 w-12 h-1 rounded-t-full" // Increased width from w-8 to w-12
                     animate={{
                       opacity: [0.6, 1, 0.6],
                       scale: [1, 1.05, 1]
@@ -115,15 +104,15 @@ export function NavBar({
                     style={{ backgroundColor: accentColor }}
                   >
                     <div
-                      className="absolute w-12 h-6 rounded-full blur-md -top-2 -left-2"
+                      className="absolute w-16 h-6 rounded-full blur-md -top-2 -left-2" // Increased width from w-12 to w-16
                       style={{ backgroundColor: `${accentColor}20` }}
                     />
                     <div
-                      className="absolute w-8 h-6 rounded-full blur-md -top-1"
+                      className="absolute w-12 h-6 rounded-full blur-md -top-1" // Increased width from w-8 to w-12
                       style={{ backgroundColor: `${accentColor}20` }}
                     />
                     <div
-                      className="absolute w-4 h-4 rounded-full blur-sm top-0"
+                      className="absolute w-6 h-4 rounded-full blur-sm top-0" // Increased width from w-4 to w-6
                       style={{ backgroundColor: `${accentColor}20` }}
                     />
                   </motion.div>
