@@ -8,9 +8,9 @@ const NaturaHeal = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 overflow-x-hidden">
       <Hero />
+      <CompanyEvolution />
       <KeyMetrics />
       <ExperienceSections />
-      <CompanyEvolution />
     </div>
   );
 };
