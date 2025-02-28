@@ -2,12 +2,15 @@
 import { motion } from "framer-motion";
 import { Users2, Layout, Link, Wand2, Glasses, Building } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { glassMorphism } from "@/lib/design-tokens";
+
 interface USPCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
   delay?: number;
 }
+
 const USPCard = ({
   icon,
   title,
@@ -33,6 +36,50 @@ const USPCard = ({
       <p className="text-gray-600/90 text-sm leading-relaxed">{description}</p>
     </Card>
   </motion.div>;
+
+const VideoFrame = () => (
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="my-16"
+  >
+    <div className="max-w-5xl mx-auto">
+      <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-b from-gray-50 to-gray-100 p-4">
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent backdrop-blur-sm"></div>
+        
+        {/* Toolbar */}
+        <div className="relative flex items-center justify-between mb-4 px-3 py-2 bg-white/90 backdrop-blur-xl rounded-xl shadow-sm">
+          <div className="flex space-x-2">
+            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
+          <div className="text-xs text-gray-500 font-medium">HomeVR.com/tours</div>
+          <div className="w-4"></div>
+        </div>
+        
+        {/* Video Container */}
+        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+          <iframe 
+            src="https://www.youtube.com/embed/bJ79Nb8uRWo" 
+            title="HomeVR Interactive Tours" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowFullScreen 
+            className="absolute top-0 left-0 w-full h-full"
+          />
+        </div>
+        
+        {/* Apple-style caption */}
+        <div className="relative mt-4 text-center">
+          <p className="text-sm text-gray-500 font-medium">Experience our interactive real estate web tours</p>
+        </div>
+      </div>
+    </div>
+  </motion.div>
+);
+
 const Hero = () => {
   const usps = [{
     icon: <Users2 className="w-8 h-8" />,
@@ -59,6 +106,7 @@ const Hero = () => {
     title: "Company Branding",
     description: "Your tour is personalised with your logo, graphics, fonts and more"
   }];
+  
   return <>
       <div className="w-full overflow-x-hidden">
         <section className="relative min-h-[60vh] flex items-center bg-gradient-to-b from-[#00a5ee]/5 to-white/90 backdrop-blur-xl">
@@ -87,6 +135,70 @@ const Hero = () => {
           <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-gradient-to-tr from-[#00a5ee]/10 to-blue-100/10 rounded-full blur-3xl -z-10" />
         </section>
 
+        {/* Company Evolution Section (Moved up) */}
+        <section className="bg-white/80 backdrop-blur-xl py-[34px]">
+          <div className="container mx-auto max-w-6xl px-6">
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.8
+          }} className="text-center mb-16">
+              <h2 className="mb-4 text-gray-900/90 font-semibold text-5xl">Company Evolution</h2>
+              <p className="text-lg text-gray-600/90 max-w-2xl mx-auto">
+                Transformed a traditional architectural visualisation business into a technology-driven real estate solutions provider
+              </p>
+            </motion.div>
+
+            <div className="relative">
+              <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#00a5ee]/20 to-transparent" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <motion.div initial={{
+                  opacity: 0,
+                  x: -20
+                }} whileInView={{
+                  opacity: 1,
+                  x: 0
+                }} viewport={{
+                  once: true
+                }} transition={{
+                  duration: 0.6
+                }} className="text-right md:pr-12">
+                  <h3 className="text-2xl mb-4 text-gray-900/90 font-semibold">House of Manuela</h3>
+                  <p className="text-gray-600/90">Traditional architectural visualisation studio focused on static renderings and basic 3D modelling</p>
+                </motion.div>
+                <motion.div initial={{
+                  opacity: 0,
+                  x: 20
+                }} whileInView={{
+                  opacity: 1,
+                  x: 0
+                }} viewport={{
+                  once: true
+                }} transition={{
+                  duration: 0.6,
+                  delay: 0.3
+                }} className="md:pl-12">
+                  <h3 className="text-2xl mb-4 text-gray-900/90 font-semibold">HomeVR</h3>
+                  <p className="text-gray-600/90">Innovative digital platform providing immersive VR experiences and comprehensive real estate visualisation solutions</p>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* HomeVR Brand Launch Video Moved Here */}
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl mt-16">
+              <iframe src="https://www.youtube.com/embed/d-hsgpV4dLQ" title="HomeVR Brand Launch Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="absolute top-0 left-0 w-full h-full" />
+            </div>
+            <p className="text-center mt-4 text-gray-600/90">HomeVR Brand Launch Video</p>
+          </div>
+        </section>
+
+        {/* Interactive Real Estate Web Tours Section (Moved down) */}
         <section className="bg-white/80 backdrop-blur-xl py-[34px]">
           <div className="container mx-auto max-w-6xl px-6">
             <motion.div initial={{
@@ -106,6 +218,9 @@ const Hero = () => {
               </p>
             </motion.div>
 
+            {/* Inserted Video in Apple-style frame */}
+            <VideoFrame />
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {usps.map((usp, index) => <USPCard key={usp.title} {...usp} delay={index * 0.1} />)}
             </div>
@@ -114,4 +229,5 @@ const Hero = () => {
       </div>
     </>;
 };
+
 export default Hero;
