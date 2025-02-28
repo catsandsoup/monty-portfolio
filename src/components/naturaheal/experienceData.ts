@@ -32,7 +32,7 @@ const experienceData: ExperienceSectionsData = {
       "Identified operational inefficiencies and proposed digital tools such as app-based rostering, electronic shelf labels, and e-commerce integration.",
       "Conducted market research using census data and customer demographics to develop detailed customer personas.",
       "Created a business growth strategy outlining branding, marketing, and operational improvements, including white/private labelling for increased profitability.",
-      "Presented strategic recommendations to the owner and business advisor, receiving high praise despite non-implementation."
+      "Presented strategic recommendations to the owner, receiving high praise from business advisors, and begun evaluation and implenentation by Q4 2024"
     ]
   },
   technology: {
