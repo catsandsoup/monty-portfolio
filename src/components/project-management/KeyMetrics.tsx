@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Building2, LineChart } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -27,7 +26,7 @@ const MetricCard = ({
   duration: 0.6,
   delay
 }}>
-    <Card className="relative overflow-hidden backdrop-blur-xl bg-white/90 border-0 shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+    <Card className="relative overflow-hidden backdrop-blur-xl bg-white/90 border-0 shadow-lg p-8 hover:shadow-xl transition-all duration-300 py-[41px]">
       <div className="mb-4 opacity-100">
         {icon}
       </div>
@@ -50,7 +49,7 @@ const KeyMetrics = () => {
     value: "50%",
     description: "Reduction in client decision time through implementation of VR visualisation platform"
   }];
-  return <section className="px-0 py-[21px]">
+  return <section className="px-0 py-[30px]">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {metrics.map((metric, index) => <MetricCard key={metric.title} {...metric} delay={index * 0.2} />)}
