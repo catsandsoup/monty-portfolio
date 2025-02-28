@@ -18,8 +18,6 @@ const CompanyEvolution = () => {
     description: "Implementation of comprehensive social media strategy and customer engagement initiatives.",
     date: "2023 Q4"
   }];
-  return <section className="py-24 px-6 bg-gradient-to-b from-white to-gray-50">
-      
-    </section>;
+  return;
 };
 export default CompanyEvolution;
