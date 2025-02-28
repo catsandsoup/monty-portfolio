@@ -13,8 +13,8 @@ const experienceData: ExperienceSectionsData = {
     title: "Business Analysis & Strategy",
     items: [
       "Conducted comprehensive business analysis to identify operational inefficiencies",
-      "Developed modernization strategy focusing on digital transformation",
-      "Implemented new inventory management systems to optimize stock control",
+      "Developed modernisation strategy focusing on digital transformation",
+      "Implemented new inventory management systems to optimise stock control",
       "Created standard operating procedures for inventory management"
     ]
   },
@@ -24,7 +24,7 @@ const experienceData: ExperienceSectionsData = {
       "Designed and executed social media marketing campaigns across multiple platforms",
       "Created engaging content to boost brand awareness and customer engagement",
       "Developed customer retention strategies through targeted communications",
-      "Analyzed marketing metrics to optimize campaign performance"
+      "Analysing marketing metrics to optimise campaign performance"
     ]
   },
   operations: {

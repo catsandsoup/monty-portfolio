@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 const CompanyEvolution = () => {
@@ -7,7 +8,7 @@ const CompanyEvolution = () => {
     date: "2023 Q1"
   }, {
     title: "Strategy Development",
-    description: "Creation of modernization roadmap focusing on inventory management and digital transformation.",
+    description: "Creation of modernisation roadmap focusing on inventory management and digital transformation.",
     date: "2023 Q2"
   }, {
     title: "Implementation Phase",

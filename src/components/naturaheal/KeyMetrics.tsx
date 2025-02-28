@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { TrendingUp, Users } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -42,7 +43,7 @@ const KeyMetrics = () => {
     icon: <TrendingUp className="h-8 w-8 text-[#07c51e] mx-0" />,
     title: "Operational Efficiency",
     value: "35%",
-    description: "Improvement in inventory turnover through modernized management systems"
+    description: "Improvement in inventory turnover through modernised management systems"
   }, {
     icon: <Users className="h-8 w-8 text-[#07c51e]" />,
     title: "Customer Engagement",
