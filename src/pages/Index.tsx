@@ -10,6 +10,7 @@ const Index = () => {
     "@type": "Person",
     "name": "Monty Giovenco",
     "url": "https://montyg.me",
+    "image": "/monty-profile.png",
     "jobTitle": "Business Leader & Digital Innovator",
     "address": {
       "@type": "PostalAddress",
@@ -20,7 +21,18 @@ const Index = () => {
     "sameAs": [
       "https://linkedin.com/in/montygiovento",
       "https://github.com/montygiovento"
-    ]
+    ],
+    "knowsAbout": [
+      "Business Transformation",
+      "Digital Innovation",
+      "Product Development",
+      "Project Management",
+      "Entrepreneurship"
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://montyg.me"
+    }
   };
 
   return (
@@ -28,6 +40,8 @@ const Index = () => {
       <Helmet>
         <title>Monty Giovenco | Business Leader & Digital Innovator</title>
         <meta name="description" content="Monty Giovenco is a business transformation specialist and digital innovator based in Sydney, Australia. Expert in project management, product development, and entrepreneurship." />
+        <meta name="keywords" content="Monty Giovenco, business transformation, digital innovation, Sydney, Australia" />
+        <link rel="canonical" href="https://montyg.me" />
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
         </script>
