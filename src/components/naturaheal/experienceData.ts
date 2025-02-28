@@ -10,39 +10,37 @@ export interface ExperienceSectionsData {
 
 const experienceData: ExperienceSectionsData = {
   businessAnalysis: {
-    title: "Business Analysis & Strategy",
+    title: "Retail & Operational Leadership",
     items: [
-      "Conducted comprehensive business analysis to identify operational inefficiencies",
-      "Developed modernisation strategy focusing on digital transformation",
-      "Implemented new inventory management systems to optimise stock control",
-      "Created standard operating procedures for inventory management"
+      "Managed daily store operations, including stock control, sales, patient scheduling, and supplier coordination.",
+      "Developed inventory management documentation to streamline ordering and reduce stock discrepancies.",
+      "Independently handled staff timesheets, rostering, and team motivation during high-pressure periods.",
+      "Resolved IT issues by liaising with third-party support and learning software mechanisms to address discrepancies quickly."
     ]
   },
   marketing: {
-    title: "Marketing & Customer Engagement",
+    title: "Customer Engagement & Health Outcomes",
     items: [
-      "Designed and executed social media marketing campaigns across multiple platforms",
-      "Created engaging content to boost brand awareness and customer engagement",
-      "Developed customer retention strategies through targeted communications",
-      "Analysing marketing metrics to optimise campaign performance"
+      "Provided tailored product recommendations, leading to measurable improvements in over 10 clients' autoimmune, metabolic, and mental health conditions.",
+      "Used nutrition and physiology expertise to guide customers and staff on product usage, ensuring safe and effective supplementation.",
+      "Conducted independent research on product pharmacology to identify suitable script refill alternatives while cross-referencing for contraindications."
     ]
   },
   operations: {
-    title: "Operational Improvements",
+    title: "Business Strategy & Growth Planning",
     items: [
-      "Streamlined inventory management processes reducing waste and improving efficiency",
-      "Implemented digital tools for better stock tracking and management",
-      "Established KPIs for measuring operational performance",
-      "Trained staff on new systems and procedures"
+      "Identified operational inefficiencies and proposed digital tools such as app-based rostering, electronic shelf labels, and e-commerce integration.",
+      "Conducted market research using census data and customer demographics to develop detailed customer personas.",
+      "Created a business growth strategy outlining branding, marketing, and operational improvements, including white/private labelling for increased profitability.",
+      "Presented strategic recommendations to the owner and business advisor, receiving high praise despite non-implementation."
     ]
   },
   technology: {
-    title: "Technology Integration",
+    title: "Entrepreneurial & Strategic Thinking",
     items: [
-      "Selected and implemented new inventory management software",
-      "Integrated digital tools for improved operational efficiency",
-      "Set up automated reporting systems for better business insights",
-      "Created documentation for all new technical systems"
+      "Balanced critical business functions while managing university studies, demonstrating resilience and time management under pressure.",
+      "Proactively advised on modernising POS and CRM systems to improve operational efficiency and customer engagement.",
+      "Led initiatives beyond core sales responsibilities, positioning the business for scalable growth and increased market competitiveness."
     ]
   }
 };

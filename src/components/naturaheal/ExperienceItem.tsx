@@ -1,5 +1,6 @@
 
 import { motion } from "framer-motion";
+import { glassMorphism } from "@/lib/design-tokens";
 
 export interface ExperienceItemProps {
   title: string;
@@ -12,12 +13,15 @@ const ExperienceItem = ({ title, items }: ExperienceItemProps) => (
     whileInView={{ opacity: 1 }}
     viewport={{ once: true }}
     transition={{ duration: 0.6 }}
-    className="bg-white rounded-none"
+    className={`${glassMorphism.light.background} ${glassMorphism.light.blur} p-8 rounded-2xl shadow-sm border border-gray-100/30`}
   >
-    <h2 className="text-3xl font-medium mb-8 text-green-500">{title}</h2>
+    <h2 className="text-2xl md:text-3xl font-medium mb-8 text-gradient-green">{title}</h2>
     <div className="space-y-4 text-gray-600/90">
       {items.map((item, index) => (
-        <p key={index}>• {item}</p>
+        <p key={index} className="flex items-start">
+          <span className="text-green-500 mr-2 text-xl leading-7">•</span>
+          <span>{item}</span>
+        </p>
       ))}
     </div>
   </motion.div>
