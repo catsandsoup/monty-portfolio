@@ -5,21 +5,25 @@ import { glassMorphism } from "@/lib/design-tokens";
 
 const CompanyEvolution = () => {
   const evolutionSteps = [{
-    title: "Initial Assessment",
-    description: "Comprehensive analysis of existing business processes and identification of key areas for improvement.",
-    date: "2023 Q1"
-  }, {
-    title: "Strategy Development",
-    description: "Creation of modernisation roadmap focusing on inventory management and digital transformation.",
-    date: "2023 Q2"
-  }, {
-    title: "Implementation Phase",
-    description: "Rollout of new inventory management systems and digital tools for operational efficiency.",
-    date: "2023 Q3"
-  }, {
-    title: "Digital Marketing Launch",
-    description: "Implementation of comprehensive social media strategy and customer engagement initiatives.",
+    title: "Joined NaturaHeal",
+    description: "Began self-led comprehensive analysis of existing business processes to identify of key areas of improvement.",
     date: "2023 Q4"
+  }, {
+    title: "Social Media Content Development",
+    description: "Design and trial of comprehensive social media strategy.",
+    date: "2024 Q1"
+  }, {
+    title: "Scope Discovery Phase",
+    description: "Exploration of business development opportunities through manufacturing partnerships and branding strategies.",
+    date: "2024 Q2"
+  }, {
+    title: "Analysis Refinement",
+    description: "Creation of modernisation roadmap focusing on inventory management, cloud bookings, staff scheduling systems as part of a broader business modernisation initiative.",
+    date: "2024 Q2"
+  }, {
+    title: "Initial Implementation",
+    description: "Rollout of improved inventory management systems and digital tools for administration efficiency.",
+    date: "2024 Q3"
   }];
 
   return (
