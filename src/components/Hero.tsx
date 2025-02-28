@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Trophy, Target, Users, Briefcase } from "lucide-react";
@@ -82,7 +81,7 @@ const Hero = () => {
           delay: 0.6
         }} className="relative mb-12 px-4">
             <h2 className="text-xl sm:text-2xl text-[#00a5ee] font-medium tracking-tight mb-4">Product &amp; Business Management</h2>
-            <p className="text-base tracking-wide leading-relaxed max-w-2xl mx-auto py-[23px] text-slate-950 font-medium sm:text-2xl">4 years leading digital transformation initiatives with measurable impact. Specialising in turning complex challenges into scalable solutions.</p>
+            <p className="text-base tracking-wide leading-relaxed max-w-2xl mx-auto py-[23px] font-normal sm:text-2xl text-zinc-700">Leading business transformation initiatives, and turning complex challenges into profitable solutions.</p>
           </motion.div>
 
           {/* Key Achievements Section */}
