@@ -14,7 +14,7 @@ const ExperienceItem = ({ title, items }: ExperienceItemProps) => (
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true }}
-    className={`${glassMorphism.light.backdrop} ${glassMorphism.light.background} rounded-2xl p-8 shadow-sm ${glassMorphism.light.border} hover:shadow-md transition-all duration-300`}
+    className={`${glassMorphism.light.background} ${glassMorphism.light.blur} rounded-2xl p-8 shadow-sm ${glassMorphism.light.border} hover:shadow-md transition-all duration-300`}
   >
     <h2 className={`text-3xl font-semibold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-[${colors.primary.blue}] to-[${colors.primary.darkBlue}]`}>
       {title}
