@@ -19,10 +19,10 @@ export const products: Product[] = [
     id: 'pathology-pro',
     name: 'Pathology Pro',
     tagline: 'Modern Health Metrics Tracking, Simplified',
-    description: 'An innovative web application that revolutionizes how healthcare professionals and patients track and visualize blood test results over time, making health data more accessible and understandable.',
+    description: 'An innovative web application that revolutionises how healthcare professionals and patients track and visualise blood test results over time, making health data more accessible and understandable.',
     features: [
       'Intelligent data processing with machine learning algorithms',
-      'Interactive visualization of health metrics over time',
+      'Interactive visualisation of health metrics over time',
       'Secure, HIPAA-compliant data storage and handling',
       'Automated report generation and analysis'
     ],
@@ -38,7 +38,7 @@ export const products: Product[] = [
     tagline: 'Develop Critical Thinking Skills for the Modern World',
     description: 'A comprehensive digital platform designed to strengthen critical thinking capabilities through structured learning paths and engaging challenges, preparing users for real-world decision making.',
     features: [
-      'Adaptive learning algorithms for personalized progression',
+      'Adaptive learning algorithms for personalised progression',
       'Real-world scenario simulations and case studies',
       'Collaborative problem-solving environments',
       'Progress tracking and skill assessment'
@@ -58,7 +58,7 @@ export const products: Product[] = [
       'AI-powered moment capture and enhancement',
       'Private, secure relationship timeline',
       'Custom relationship milestones and celebrations',
-      'Cross-platform synchronization'
+      'Cross-platform synchronisation'
     ],
     technologies: ['Swift', 'Firebase', 'CoreML', 'Cloud Storage'],
     accentColor: 'text-rose-500',
