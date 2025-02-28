@@ -37,7 +37,15 @@ const USPCard = ({
     </Card>
   </motion.div>;
 
-const VideoFrame = () => (
+const VideoEmbed = ({ 
+  videoId, 
+  title, 
+  caption 
+}: { 
+  videoId: string; 
+  title: string; 
+  caption: string; 
+}) => (
   <motion.div 
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -46,25 +54,13 @@ const VideoFrame = () => (
     className="my-16"
   >
     <div className="max-w-5xl mx-auto">
-      <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-b from-gray-50 to-gray-100 p-4">
-        <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent backdrop-blur-sm"></div>
-        
-        {/* Toolbar */}
-        <div className="relative flex items-center justify-between mb-4 px-3 py-2 bg-white/90 backdrop-blur-xl rounded-xl shadow-sm">
-          <div className="flex space-x-2">
-            <div className="w-3 h-3 rounded-full bg-red-500"></div>
-            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-            <div className="w-3 h-3 rounded-full bg-green-500"></div>
-          </div>
-          <div className="text-xs text-gray-500 font-medium">HomeVR.com/tours</div>
-          <div className="w-4"></div>
-        </div>
-        
+      <div className="relative rounded-2xl overflow-hidden shadow-2xl">
         {/* Video Container */}
         <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#00a5ee]/10 to-transparent z-10 pointer-events-none" />
           <iframe 
-            src="https://www.youtube.com/embed/bJ79Nb8uRWo" 
-            title="HomeVR Interactive Tours" 
+            src={`https://www.youtube.com/embed/${videoId}`}
+            title={title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowFullScreen 
             className="absolute top-0 left-0 w-full h-full"
@@ -72,8 +68,8 @@ const VideoFrame = () => (
         </div>
         
         {/* Apple-style caption */}
-        <div className="relative mt-4 text-center">
-          <p className="text-sm text-gray-500 font-medium">Experience our interactive real estate web tours</p>
+        <div className="relative mt-4 mb-2 text-center">
+          <p className="text-sm text-gray-500 font-medium">{caption}</p>
         </div>
       </div>
     </div>
@@ -190,11 +186,12 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* HomeVR Brand Launch Video Moved Here */}
-            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl mt-16">
-              <iframe src="https://www.youtube.com/embed/d-hsgpV4dLQ" title="HomeVR Brand Launch Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="absolute top-0 left-0 w-full h-full" />
-            </div>
-            <p className="text-center mt-4 text-gray-600/90">HomeVR Brand Launch Video</p>
+            {/* HomeVR Brand Launch Video */}
+            <VideoEmbed 
+              videoId="d-hsgpV4dLQ" 
+              title="HomeVR Brand Launch Video" 
+              caption="HomeVR Brand Launch Video"
+            />
           </div>
         </section>
 
@@ -219,7 +216,11 @@ const Hero = () => {
             </motion.div>
 
             {/* Inserted Video in Apple-style frame */}
-            <VideoFrame />
+            <VideoEmbed
+              videoId="bJ79Nb8uRWo"
+              title="HomeVR Interactive Tours"
+              caption="Experience our interactive real estate web tours"
+            />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {usps.map((usp, index) => <USPCard key={usp.title} {...usp} delay={index * 0.1} />)}
