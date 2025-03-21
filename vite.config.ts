@@ -12,17 +12,9 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react({
-      // Use SWC for faster transforms
-      swcOptions: {
-        jsc: {
-          transform: {
-            react: {
-              runtime: "automatic",
-              refresh: mode === "development",
-            },
-          },
-        },
-      },
+      jsxImportSource: undefined,
+      tsDecorators: false,
+      plugins: []
     }),
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
