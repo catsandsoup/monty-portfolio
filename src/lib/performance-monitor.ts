@@ -14,12 +14,31 @@ let frameCount = 0;
 const longFrames: number[] = [];
 const JANK_THRESHOLD = 16.7; // 60fps = ~16.7ms per frame
 
+// Collected performance metrics
+interface PerformanceMetrics {
+  fps: number;
+  jankCount: number;
+  avgJankTime: number;
+  lastFrameTime: number;
+  memoryUsage?: number;
+  domNodes?: number;
+  eventListeners?: number;
+}
+
+// Performance statistics
+let metrics: PerformanceMetrics = {
+  fps: 0,
+  jankCount: 0,
+  avgJankTime: 0,
+  lastFrameTime: 0
+};
+
 // Start monitoring performance
 export const startPerformanceMonitoring = () => {
   if (typeof window === 'undefined') return;
   
   // Only run in development or when explicitly enabled
-  if (process.env.NODE_ENV !== 'development' && 
+  if (import.meta.env.MODE !== 'development' && 
       !localStorage.getItem('enablePerfMonitoring')) {
     return;
   }
@@ -41,38 +60,77 @@ export const startPerformanceMonitoring = () => {
   monitorEl.id = 'performance-monitor';
   document.body.appendChild(monitorEl);
   
+  // DOM metrics collection
+  const collectDomMetrics = () => {
+    metrics.domNodes = document.querySelectorAll('*').length;
+    
+    // Count event listeners (approximate)
+    if (window.getEventListeners) {
+      try {
+        const events = ['click', 'mousedown', 'mouseup', 'mousemove', 'scroll', 'touchstart', 'touchmove'];
+        let listenerCount = 0;
+        events.forEach(event => {
+          const listeners = (window as any).getEventListeners(document, event);
+          if (listeners) listenerCount += listeners.length;
+        });
+        metrics.eventListeners = listenerCount;
+      } catch (e) {
+        // Browser doesn't support getEventListeners API
+      }
+    }
+    
+    // Get memory usage if available
+    if (performance && (performance as any).memory) {
+      metrics.memoryUsage = Math.round(
+        ((performance as any).memory.usedJSHeapSize / (performance as any).memory.jsHeapSizeLimit) * 100
+      );
+    }
+  };
+  
   // Animation frame callback to measure performance
   const tick = () => {
     const now = performance.now();
     frameCount++;
     
+    // Track frame time for jank detection
+    const frameDuration = now - (metrics.lastFrameTime || now);
+    metrics.lastFrameTime = now;
+    
+    // Detect dropped frames / jank
+    if (frameDuration > JANK_THRESHOLD) {
+      longFrames.push(frameDuration);
+      metrics.jankCount++;
+    }
+    
     // Calculate FPS every second
     if (now - lastTime >= 1000) {
-      fps = frameCount;
+      metrics.fps = frameCount;
       frameCount = 0;
       lastTime = now;
       
+      // Calculate average jank time
+      metrics.avgJankTime = longFrames.length ? 
+        (longFrames.reduce((a, b) => a + b, 0) / longFrames.length) : 
+        0;
+      
+      // Collect DOM metrics occasionally 
+      if (metrics.fps % 2 === 0) {
+        collectDomMetrics();
+      }
+      
       // Update display
-      const fpsColor = fps > 50 ? 'lime' : fps > 30 ? 'yellow' : 'red';
-      const longFramesCount = longFrames.length;
-      const avgJank = longFrames.length ? 
-        (longFrames.reduce((a, b) => a + b, 0) / longFrames.length).toFixed(1) : 
-        '0';
+      const fpsColor = metrics.fps > 50 ? 'lime' : metrics.fps > 30 ? 'yellow' : 'red';
       
       monitorEl.innerHTML = `
-        FPS: <span style="color:${fpsColor}">${fps}</span> | 
-        Jank: ${longFramesCount} (${avgJank}ms)
+        FPS: <span style="color:${fpsColor}">${metrics.fps}</span> | 
+        Jank: ${metrics.jankCount} (${metrics.avgJankTime.toFixed(1)}ms)
+        ${metrics.domNodes ? ` | DOM: ${metrics.domNodes}` : ''}
+        ${metrics.memoryUsage ? ` | Mem: ${metrics.memoryUsage}%` : ''}
       `;
       
-      // Reset long frames after reporting
+      // Reset jank tracking after reporting
+      metrics.jankCount = 0;
       longFrames.length = 0;
-    }
-    
-    // Measure this frame's duration
-    const frameDuration = performance.now() - now;
-    if (frameDuration > JANK_THRESHOLD) {
-      longFrames.push(frameDuration);
-      console.warn(`[Performance] Long frame detected: ${frameDuration.toFixed(1)}ms`);
     }
     
     requestAnimationFrame(tick);
@@ -84,7 +142,8 @@ export const startPerformanceMonitoring = () => {
   if (typeof window !== 'undefined') {
     (window as any).__PERFORMANCE_MONITOR = {
       getLongFrames: () => [...longFrames],
-      getCurrentFps: () => fps,
+      getCurrentFps: () => metrics.fps,
+      getMetrics: () => ({...metrics}),
       toggleVisibility: () => {
         monitorEl.style.display = 
           monitorEl.style.display === 'none' ? 'block' : 'none';
@@ -92,6 +151,13 @@ export const startPerformanceMonitoring = () => {
       getComponentStats: () => {
         // Collect React component render counts from DevTools
         console.log('[Performance] Getting component stats - open React DevTools profiler for details');
+      },
+      findJankySections: () => {
+        // Attempt to identify problematic sections
+        const jankySections = document.querySelectorAll('.motion-safe, [animate], [data-motion]');
+        console.log(`[Performance] Found ${jankySections.length} potentially costly animated sections`);
+        console.log(jankySections);
+        return Array.from(jankySections);
       }
     };
     
@@ -122,9 +188,25 @@ export const togglePerformanceMonitor = (enable = true) => {
   }
 };
 
-// Add monitor to main.tsx
-if (typeof window !== 'undefined' && 
-    (process.env.NODE_ENV === 'development' || 
-     localStorage.getItem('enablePerfMonitoring'))) {
-  startPerformanceMonitoring();
-}
+// Detect if running in development mode
+export const isDevelopment = import.meta.env.MODE === 'development';
+
+// Export metrics for external use
+export const getPerformanceMetrics = () => ({...metrics});
+
+// Export detection utility for high-performance mode
+export const shouldUseHighPerformanceMode = () => {
+  // Return true if we should optimize for performance
+  if (typeof window === 'undefined') return false;
+  
+  // Detect slow devices
+  const isSlowDevice = 
+    // Mobile device
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+    // Low memory
+    ('deviceMemory' in navigator && (navigator as any).deviceMemory < 4) ||
+    // Few CPU cores
+    (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4);
+  
+  return isSlowDevice;
+};

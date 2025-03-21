@@ -5,16 +5,31 @@ import { ArrowUpRight, Trophy, Target, Users, Briefcase } from "lucide-react";
 import { Card } from "./ui/card";
 import { motion } from "framer-motion";
 import { optimizedFadeIn, optimizedAnimationProps } from "@/lib/optimized-animations";
-import { useAnimationPerformance } from "@/hooks/use-animation-performance";
+import { useGPUAnimation } from "@/hooks/use-gpu-animation";
+import { trackAnimation } from "@/lib/animation-performance-monitor";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const containerRef = useAnimationPerformance<HTMLDivElement>({ enableWillChange: true });
+  const containerRef = useGPUAnimation<HTMLDivElement>({ 
+    enableWillChange: true,
+    optimizePaint: true
+  });
   
   // Delay animations until after mount to reduce initial load lag
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoaded(true), 100);
-    return () => clearTimeout(timer);
+    // Use requestAnimationFrame to push animation to next frame
+    const rafId = requestAnimationFrame(() => {
+      const timeoutId = setTimeout(() => setIsLoaded(true), 50);
+      return () => clearTimeout(timeoutId);
+    });
+    
+    // Track this component's animations
+    const cleanup = trackAnimation("Hero", "main");
+    
+    return () => {
+      cancelAnimationFrame(rafId);
+      cleanup();
+    };
   }, []);
 
   const achievements = [
@@ -40,6 +55,33 @@ const Hero = () => {
     }
   ];
 
+  // Memoize achievement cards to reduce re-renders
+  const achievementCards = achievements.map((achievement, index) => (
+    <motion.div 
+      key={achievement.label}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ 
+        duration: 0.3, 
+        delay: 0.1 + index * 0.1,
+        ease: [0.25, 0.1, 0.25, 1]
+      }}
+      style={{ willChange: 'opacity, transform' }}
+    >
+      <Card className="p-4 backdrop-blur-sm bg-white/80 border-0 hover:bg-white/90 transition-all duration-300">
+        <div className="flex items-center justify-center mb-2">
+          {achievement.icon}
+        </div>
+        <div className="text-2xl font-bold text-gray-900 mb-1">
+          {achievement.metric}
+        </div>
+        <div className="text-sm text-gray-600">
+          {achievement.label}
+        </div>
+      </Card>
+    </motion.div>
+  ));
+
   return (
     <section className="relative min-h-screen w-full overflow-hidden" ref={containerRef}>
       {/* Simplified background with fewer gradient elements */}
@@ -52,6 +94,7 @@ const Hero = () => {
             variants={optimizedFadeIn}
             {...optimizedAnimationProps}
             className="max-w-4xl mx-auto text-center pt-12 md:pt-24"
+            style={{ willChange: 'opacity, transform' }}
           >
             {/* Profile Image with simplified animation */}
             <motion.div 
@@ -59,6 +102,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
               className="mb-12"
+              style={{ willChange: 'opacity' }}
             >
               <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-[#00a5ee]/20 transition-all duration-300 hover:scale-105">
                 <img 
@@ -76,6 +120,7 @@ const Hero = () => {
               variants={optimizedFadeIn}
               {...optimizedAnimationProps}
               className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 px-4 py-4"
+              style={{ willChange: 'opacity, transform' }}
             >
               Monty Giovenco
             </motion.h1>
@@ -84,6 +129,7 @@ const Hero = () => {
               variants={optimizedFadeIn}
               {...optimizedAnimationProps}
               className="relative mb-12 px-4"
+              style={{ willChange: 'opacity, transform' }}
             >
               <h2 className="text-xl text-[#00a5ee] font-medium tracking-tight mb-4 sm:text-4xl">
                 Business Leadership &amp; Project Development
@@ -93,32 +139,9 @@ const Hero = () => {
               </p>
             </motion.div>
 
-            {/* Key Achievements Section - Simplified animation flow */}
+            {/* Key Achievements Section - Optimized for better performance */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12 px-4">
-              {achievements.map((achievement, index) => (
-                <motion.div 
-                  key={achievement.label}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.3, 
-                    delay: 0.1 + index * 0.1,
-                    ease: [0.25, 0.1, 0.25, 1]
-                  }}
-                >
-                  <Card className="p-4 backdrop-blur-sm bg-white/80 border-0 hover:bg-white/90 transition-all duration-300">
-                    <div className="flex items-center justify-center mb-2">
-                      {achievement.icon}
-                    </div>
-                    <div className="text-2xl font-bold text-gray-900 mb-1">
-                      {achievement.metric}
-                    </div>
-                    <div className="text-sm text-gray-600">
-                      {achievement.label}
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
+              {achievementCards}
             </div>
 
             <motion.div 
@@ -126,6 +149,7 @@ const Hero = () => {
               {...optimizedAnimationProps}
               transition={{ delay: 0.4 }}
               className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 px-4"
+              style={{ willChange: 'opacity, transform' }}
             >
               <Link to="/experience" className="group flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto text-lg font-medium text-white bg-[#00a5ee] rounded-2xl hover:bg-[#0094d6] transition-all duration-300 shadow-lg hover:shadow-xl">
                 View My Work
