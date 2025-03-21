@@ -65,18 +65,19 @@ export const startPerformanceMonitoring = () => {
     metrics.domNodes = document.querySelectorAll('*').length;
     
     // Count event listeners (approximate)
-    if (window.getEventListeners) {
-      try {
-        const events = ['click', 'mousedown', 'mouseup', 'mousemove', 'scroll', 'touchstart', 'touchmove'];
-        let listenerCount = 0;
-        events.forEach(event => {
-          const listeners = (window as any).getEventListeners(document, event);
-          if (listeners) listenerCount += listeners.length;
-        });
-        metrics.eventListeners = listenerCount;
-      } catch (e) {
-        // Browser doesn't support getEventListeners API
+    // Since getEventListeners is only available in Chrome DevTools and not as a standard API,
+    // we'll skip this functionality or provide an alternative approach
+    try {
+      // Check if we're in a development environment with DevTools extensions
+      if (typeof (window as any).__REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined') {
+        // We can't reliably count listeners without the DevTools API,
+        // so we'll just count DOM nodes with event attributes as an approximation
+        const elementsWithEvents = document.querySelectorAll('[onclick], [onmouseover], [onmouseout], [onkeydown], [onkeyup]');
+        metrics.eventListeners = elementsWithEvents.length;
       }
+    } catch (e) {
+      // Silently fail if we can't count event listeners
+      metrics.eventListeners = undefined;
     }
     
     // Get memory usage if available
