@@ -12,12 +12,6 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react({
-      // Use Babel's loose mode and optimize component imports
-      babel: {
-        plugins: [
-          ["@babel/plugin-transform-react-jsx", { runtime: "automatic" }],
-        ],
-      },
       // Use SWC for faster transforms
       swcOptions: {
         jsc: {
