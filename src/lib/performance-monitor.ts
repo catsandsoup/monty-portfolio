@@ -1,3 +1,4 @@
+
 /**
  * Animation Performance Monitor
  * 
@@ -65,13 +66,12 @@ export const startPerformanceMonitoring = () => {
     metrics.domNodes = document.querySelectorAll('*').length;
     
     // Count event listeners (approximate)
-    // Since getEventListeners is only available in Chrome DevTools and not as a standard API,
-    // we'll skip this functionality or provide an alternative approach
+    // Since we can't reliably count event listeners across all browsers,
+    // we'll count DOM nodes with event attributes as an approximation
     try {
       // Check if we're in a development environment with DevTools extensions
       if (typeof (window as any).__REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined') {
-        // We can't reliably count listeners without the DevTools API,
-        // so we'll just count DOM nodes with event attributes as an approximation
+        // Count elements with event attributes as an approximation
         const elementsWithEvents = document.querySelectorAll('[onclick], [onmouseover], [onmouseout], [onkeydown], [onkeyup]');
         metrics.eventListeners = elementsWithEvents.length;
       }
