@@ -324,13 +324,24 @@ export const trackAnimation = (component: string, name: string): () => void => {
     return () => {};
   }
   
-  // Start tracking
-  const id = window.__PERFORMANCE_MONITOR.startTracking(component, name);
-  
-  // Return cleanup function
-  return () => {
-    if (id) window.__PERFORMANCE_MONITOR.stopTracking(id);
-  };
+  try {
+    // Start tracking
+    const id = window.__PERFORMANCE_MONITOR.startTracking(component, name);
+    
+    // Return cleanup function
+    return () => {
+      if (id && window.__PERFORMANCE_MONITOR) {
+        try {
+          window.__PERFORMANCE_MONITOR.stopTracking(id);
+        } catch (e) {
+          console.warn('[Animation Perf] Failed to stop tracking:', e);
+        }
+      }
+    };
+  } catch (e) {
+    console.warn('[Animation Perf] Failed to start tracking:', e);
+    return () => {};
+  }
 };
 
 // Add TypeScript type definition for the global object
