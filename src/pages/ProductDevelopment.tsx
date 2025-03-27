@@ -1,10 +1,8 @@
-
 import { motion } from "framer-motion";
 import ProductShowcase from "@/components/product-development/ProductShowcase";
 import SkillsMatrix from "@/components/product-development/SkillsMatrix";
 import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet";
-
 const ProductDevelopment = () => {
   const structuredData = {
     "@context": "https://schema.org",
@@ -16,12 +14,7 @@ const ProductDevelopment = () => {
       "name": "Monty Giovenco",
       "jobTitle": "Product Development Specialist",
       "description": "Crafting innovative digital experiences that solve real-world problems through user-centered design and cutting-edge technology",
-      "knowsAbout": [
-        "Product Strategy",
-        "Project Leadership",
-        "Business Analysis",
-        "Technical Expertise"
-      ]
+      "knowsAbout": ["Product Strategy", "Project Leadership", "Business Analysis", "Technical Expertise"]
     }
   };
 
@@ -29,24 +22,19 @@ const ProductDevelopment = () => {
   const breadcrumbData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://montyg.me"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Product Development",
-        "item": "https://montyg.me/portfolio/product-development"
-      }
-    ]
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://montyg.me"
+    }, {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Product Development",
+      "item": "https://montyg.me/portfolio/product-development"
+    }]
   };
-
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Product Development Portfolio | Monty Giovenco | Sydney</title>
         <meta name="description" content="Explore Monty Giovenco's product development portfolio. Innovative digital experiences solving real-world problems through user-centered design and cutting-edge technology." />
@@ -118,14 +106,7 @@ const ProductDevelopment = () => {
             once: true
           }} className="text-center">
               <h2 className="text-3xl font-semibold mb-8 text-gray-900">Professional Summary</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                As a Product Development leader with over a decade of experience, I specialise in 
-                translating complex business requirements into elegant technical solutions. My approach 
-                combines deep technical expertise with strategic business acumen, ensuring that every 
-                product not only meets immediate needs but scales for future growth. From concept to 
-                deployment, I pride myself on delivering innovative solutions that drive meaningful 
-                impact.
-              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">I enjoy translating complex requirements into effective solutions. From concept to deployment, I pride myself on delivering innovative solutions that drive meaningful impact.</p>
             </motion.div>
           </div>
         </div>
@@ -161,8 +142,6 @@ const ProductDevelopment = () => {
 
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default ProductDevelopment;
