@@ -21,9 +21,7 @@ export const products: Product[] = [
     tagline: 'Modern Health Metrics Tracking, Simplified',
     description: 'An innovative web application that revolutionises how healthcare professionals and patients track and visualise blood test results over time, making health data more accessible and understandable.',
     features: [
-      'Intelligent data processing with machine learning algorithms',
       'Interactive visualisation of health metrics over time',
-      'Secure, HIPAA-compliant data storage and handling',
       'Automated report generation and analysis'
     ],
     technologies: ['React', 'TypeScript', 'Node.js', 'TensorFlow'],
@@ -38,9 +36,7 @@ export const products: Product[] = [
     tagline: 'Develop Critical Thinking Skills for the Modern World',
     description: 'A comprehensive digital platform designed to strengthen critical thinking capabilities through structured learning paths and engaging challenges, preparing users for real-world decision making.',
     features: [
-      'Adaptive learning algorithms for personalised progression',
       'Real-world scenario simulations and case studies',
-      'Collaborative problem-solving environments',
       'Progress tracking and skill assessment'
     ],
     technologies: ['Next.js', 'Python', 'PostgreSQL', 'AI/ML'],
@@ -55,10 +51,8 @@ export const products: Product[] = [
     tagline: 'Cultivate Your Love Story in the Digital Age',
     description: 'An elegantly designed iOS application that enables couples to document, celebrate, and preserve their unique relationship journey through modern digital experiences.',
     features: [
-      'AI-powered moment capture and enhancement',
       'Private, secure relationship timeline',
-      'Custom relationship milestones and celebrations',
-      'Cross-platform synchronisation'
+      'Custom relationship milestones and celebrations'
     ],
     technologies: ['Swift', 'Firebase', 'CoreML', 'Cloud Storage'],
     accentColor: 'text-rose-500',
